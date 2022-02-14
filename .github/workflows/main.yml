@@ -13,8 +13,26 @@ jobs:
 
       - name: Build Microblog
         uses: herschel666/microblog-action@beta
-        with: ...
-
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          url: 'https://cc-treasury.github.io/issueblog/'
+          title: 'My Awesome Microblog'
+          description: 'See what I have written.'
+          theme: 'water.css'
+          date-format: 'yyyy-M-d'
+          posts-per-page: 20
+          pages: 'docs/**/*.md'
+          static-frontpage: 'welcome.md'
+          custom-styles: 'css/custom.css'
+          custom-javascript: 'js/custom.js'
+          label: 'blog'
+          closed: true
+          out-dir: '.tmp/site'
+          static-dir: 'misc/files'
+          lang: 'de'
+          i18n.next: 'Nächste Artikel'
+          i18n.prev: 'Vorherige Artikel'
+          i18n.posts: 'Artikel'
       - name: Deploy Microblog
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
