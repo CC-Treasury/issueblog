@@ -31,7 +31,6 @@ jobs:
         labels: ${{ steps.extract.outputs.labels }}
         title: ${{ steps.extract.outputs.title }}
         body: ${{ steps.extract.outputs.body }}
-        project-type: organization
         project: 1  # The project-number from organization project https://github.com/orgs/org/projects/project-number
         column: In Progress
         pinned: false
