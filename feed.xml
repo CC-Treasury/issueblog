@@ -5,15 +5,22 @@
     
     <link>https://cc-treasury.github.io/issueblog/</link>
     <generator>https://github.com/herschel666/microblog-action</generator>
-    <lastBuildDate>Mon, 21 Feb 2022 03:04:34 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 21 Feb 2022 03:20:43 +0000</lastBuildDate>
     
     <item>
-      <title>[DATE]: [FEATURE NAME]</title>
-      <link>https://cc-treasury.github.io/issueblog/posts/1145261949.html</link>
-      <guid isPermaLink="false">1145261949</guid>
-      <pubDate>Mon, 21 Feb 2022 03:04:12 +0000</pubDate>
+      <title>Town Hall Slides -  Monday, 28th February, 2022</title>
+      <link>https://cc-treasury.github.io/issueblog/posts/1145271203.html</link>
+      <guid isPermaLink="false">1145271203</guid>
+      <pubDate>Mon, 21 Feb 2022 03:20:27 +0000</pubDate>
       <description>
-        <![CDATA[<p>Testing body</p>
+        <![CDATA[<h3>Townhall slides -  Monday, 28th February, 2022</h3>
+<ul>
+<li>Previous Town Hall - <a href="https://github.com//Ek-phrasis/Sandbox/issues/6">https://github.com//Ek-phrasis/Sandbox/issues/6</a></li>
+<li>CC Admin meeting -</li>
+</ul>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" disabled> Prepare Town Hall slides for Wednesday</li>
+</ul>
 ]]>
       </description>
     </item>
