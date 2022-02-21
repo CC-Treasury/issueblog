@@ -1,13 +1,13 @@
 ---
 name: Tracking issue
 about: Use this template for tracking new features.
-title: "${{ $(date -d '7 days' '+ %A, %dth %B, %Y') }}"
+title: "Townhall Slides"
 labels: tracking issue, needs triage
 assignees: CC-Treasury
 ---
-### Townhall slides - ${{ $(date -d '7 days' '+ %A, %dth %B, %Y') }}
+### Townhall slides - 
             
-* Previous Town Hall - https://github.com//Ek-phrasis/Sandbox/issues/{{ previousIssueNumber }}
+* Previous Town Hall - https://github.com//Ek-phrasis/Sandbox/issues/
 * CC Admin meeting - 
             
 - [ ] Prepare Town Hall slides for Wednesday
