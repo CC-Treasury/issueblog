@@ -28,7 +28,7 @@ jobs:
     - name: New first responder issue
       uses: imjohnbo/issue-bot@v3
       with:
-        token: ${{ secrets.GITHUB_TOKEN }} # Built in GITHUB_TOKEN permissions are too restrictive, so a personal access token is used here
+        token: ${{ secrets.PAT }} # Built in GITHUB_TOKEN permissions are too restrictive, so a personal access token is used here
         assignees: ${{ steps.extract.outputs.assignees }}
         labels: ${{ steps.extract.outputs.labels }}
         title: Town Hall Slides - ${{ env.TODAY }}
@@ -39,8 +39,8 @@ jobs:
           * CC Admin meeting - 
           
           - [ ] Prepare Town Hall slides for Wednesday
-        #project: 1  # The project-number from organization project https://github.com/orgs/org/projects/project-number
-        #column: In progress
+        project: 1  # The project-number from organization project https://github.com/orgs/org/projects/project-number
+        column: In progress
         pinned: false
         close-previous: true
         linked-comments: true
