@@ -29,17 +29,10 @@ jobs:
       uses: imjohnbo/issue-bot@v3
       with:
         token: ${{ secrets.PAT }} # Built in GITHUB_TOKEN permissions are too restrictive, so a personal access token is used here
-        assignees: "Andre-Diamond"
-        labels: "slides"
-        title: Town Hall Slides - ${{ env.TODAY }}
-        body: |
-          ### Townhall slides - ${{ env.TODAY }}
-          
-          * Previous Town Hall - https://github.com//CC-Treasury/issueblog/issues/{{ previousIssueNumber }}
-          * CC Admin meeting - 
-          
-          - [ ] Prepare Town Hall slides for Wednesday
-          
+        assignees: ${{ steps.extract.outputs.assignees }}
+        labels: ${{ steps.extract.outputs.labels }}
+        title: ${{ steps.extract.outputs.title }}
+        body: ${{ steps.extract.outputs.body }}  
         project: 1  # The project-number from organization project https://github.com/orgs/org/projects/project-number
         column: In Progress
         pinned: false
