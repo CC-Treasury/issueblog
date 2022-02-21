@@ -1,8 +1,8 @@
 ---
-name: "Tracking issue"
-about: "Use this template for tracking new features."
+name: Tracking issue
+about: Use this template for tracking new features.
 title: "[DATE]: [FEATURE NAME]"
-labels: ""
-assignees: "Andre-Diamond"
+labels: tracking issue, needs triage
+assignees: Andre-Diamond
 ---
-Testing  
+Testing body
