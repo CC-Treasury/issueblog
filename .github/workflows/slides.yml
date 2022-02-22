@@ -42,5 +42,5 @@ jobs:
         project: 1  # The project-number from organization project https://github.com/orgs/org/projects/project-number
         column: In progress
         pinned: false
-        close-previous: true
+        close-previous: false
         linked-comments: true
