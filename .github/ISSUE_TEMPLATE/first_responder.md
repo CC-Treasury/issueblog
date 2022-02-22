@@ -2,7 +2,7 @@
 name: Tracking issue
 about: Use this template for tracking new features.
 title: "Townhall Slides"
-labels: tracking issue, needs triage
+labels: 
 assignees: CC-Treasury
 ---
 ### Townhall slides - 
