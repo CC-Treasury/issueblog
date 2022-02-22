@@ -9,7 +9,7 @@ on:
   #- cron: 0 0 1 * *
 
 jobs:
-  first_responder:
+  town_hall_slides:
     name: New responder duty
     runs-on: ubuntu-latest
     steps:
@@ -25,7 +25,7 @@ jobs:
     # Generates and pins new first responder issue, closes previous, writes linking comments, assigns to next person in line, adds to organization project number 550, column name "Duties", milestone number 10
     - name: Todays date
       run: echo "TODAY=$(date -d '7 days' '+ %A, %dth %B, %Y')" >> $GITHUB_ENV
-    - name: New first responder issue
+    - name: New slides issue
       uses: imjohnbo/issue-bot@v3
       with:
         token: ${{ secrets.PAT }} # Built in GITHUB_TOKEN permissions are too restrictive, so a personal access token is used here
