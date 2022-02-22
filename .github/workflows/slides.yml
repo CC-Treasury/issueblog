@@ -35,7 +35,7 @@ jobs:
         body: |
           ### Townhall slides - ${{ env.TODAY }}
           
-          * Previous Town Hall - https://github.com//Ek-phrasis/Sandbox/issues/{{ previousIssueNumber }}
+          * Previous Town Hall - https://github.com//Ek-phrasis/Sandbox/issues/ {{ previousIssueNumber }}
           * CC Admin meeting - 
           
           - [ ] Prepare Town Hall slides for Wednesday
