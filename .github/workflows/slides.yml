@@ -15,7 +15,7 @@ jobs:
     steps:
 
     - name: Get template
-      uses: imjohnbo/extract-issue-template-fields@v1.0.1
+      uses: imjohnbo/extract-issue-template-fields@v1
       id: extract
       with:
         path: .github/ISSUE_TEMPLATE/first_responder.md # assignees, labels, and title defined in issue template header
