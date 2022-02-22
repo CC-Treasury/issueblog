@@ -31,7 +31,7 @@ jobs:
         token: ${{ secrets.PAT }} # Built in GITHUB_TOKEN permissions are too restrictive, so a personal access token is used here
         assignees: "CC-Treasury"
         labels: ""
-        title: Town Hall Slides - ${{ env.TODAY }}
+        title: "Town Hall Slides - ${{ env.TODAY }}"
         body: |
           ### Townhall slides - ${{ env.TODAY }}
           
