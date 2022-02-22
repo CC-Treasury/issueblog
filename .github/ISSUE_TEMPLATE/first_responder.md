@@ -5,9 +5,3 @@ title: Townhall Slides
 labels: 
 assignees: CC-Treasury
 ---
-### Townhall slides - 
-            
-* Previous Town Hall - https://github.com//CC-Treasury/issueblog/issues/
-* CC Admin meeting - 
-            
-- [ ] Prepare Town Hall slides for Wednesday
