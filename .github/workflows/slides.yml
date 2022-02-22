@@ -9,7 +9,7 @@ on:
   #- cron: 0 0 1 * *
 
 jobs:
-  town_hall_slides:
+  first_responder:
     name: New responder duty
     runs-on: ubuntu-latest
     steps:
@@ -25,23 +25,22 @@ jobs:
     # Generates and pins new first responder issue, closes previous, writes linking comments, assigns to next person in line, adds to organization project number 550, column name "Duties", milestone number 10
     - name: Todays date
       run: echo "TODAY=$(date -d '7 days' '+ %A, %dth %B, %Y')" >> $GITHUB_ENV
-    - name: New slides issue
+    - name: New first responder issue
       uses: imjohnbo/issue-bot@v3
       with:
         token: ${{ secrets.PAT }} # Built in GITHUB_TOKEN permissions are too restrictive, so a personal access token is used here
-        assignees: "CC-Treasury"
-        labels: ""
-        title: "Town Hall Slides - ${{ env.TODAY }}"
+        assignees: ${{ steps.extract.outputs.assignees }}
+        labels: ${{ steps.extract.outputs.labels }}
+        title: Town Hall Slides - ${{ env.TODAY }}
         body: |
           ### Townhall slides - ${{ env.TODAY }}
           
-          * Previous Town Hall - https://github.com//CC-Treasury/issueblog/issues/{{ previousIssueNumber }}
+          * Previous Town Hall - https://github.com//Ek-phrasis/Sandbox/issues/{{ previousIssueNumber }}
           * CC Admin meeting - 
           
           - [ ] Prepare Town Hall slides for Wednesday
-          
         project: 1  # The project-number from organization project https://github.com/orgs/org/projects/project-number
         column: In progress
         pinned: false
-        close-previous: false
+        close-previous: true
         linked-comments: true
