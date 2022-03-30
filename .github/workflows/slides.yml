@@ -43,4 +43,4 @@ jobs:
         column: In progress
         pinned: false
         close-previous: true
-        linked-comments: false
+        linked-comments: true
