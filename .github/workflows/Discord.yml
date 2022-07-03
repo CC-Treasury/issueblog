@@ -17,7 +17,7 @@ jobs:
          severity: info
          username: Treasury Guild
          color: '#ff00aa'
-         avatarUrl: https://raw.githubusercontent.com/CC-Treasury/issueblog/main/Logo.png
+         avatarUrl: https://raw.githubusercontent.com/CC-Treasury/issueblog/main/Untitled-1.png
          description: "Payment Notification"
          details: |
            ${{ fromJSON(github.event.issue.body).project }} 
