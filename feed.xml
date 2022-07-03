@@ -5,7 +5,7 @@
     
     <link>https://cc-treasury.github.io/issueblog/</link>
     <generator>https://github.com/herschel666/microblog-action</generator>
-    <lastBuildDate>Sun, 3 Jul 2022 10:15:51 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 3 Jul 2022 10:29:11 +0000</lastBuildDate>
     
     <item>
       <title>Town Hall Slides -  Wednesday, 27th April, 2022</title>
@@ -21,6 +21,30 @@
 <ul class="contains-task-list">
 <li class="task-list-item"><input type="checkbox" disabled> Prepare Town Hall slides for Wednesday</li>
 </ul>
+]]>
+      </description>
+    </item>
+    
+    <item>
+      <title>2422</title>
+      <link>https://cc-treasury.github.io/issueblog/posts/1187491345.html</link>
+      <guid isPermaLink="false">1187491345</guid>
+      <pubDate>Thu, 31 Mar 2022 04:45:40 +0000</pubDate>
+      <description>
+        <![CDATA[<p>{
+"id" : "1656843114368",
+"date": "Sun, 03 Jul 2022 10:11:54 GMT",
+"fund": "Fund8",
+"project": "Lead-Generators",
+"proposal": "Community-Lead-Generation",
+"ideascale": "<a href="https://cardano.ideascale.com/c/idea/397339">https://cardano.ideascale.com/c/idea/397339</a>",
+"budget": "Incoming",
+"name": "Andre",
+"exchange-rate": "0.55 USD per ADA",
+"Wallet balance": ["27300.00 ADA"],
+"txid": "fwef4r2433",
+"description": "TEst description"
+}</p>
 ]]>
       </description>
     </item>
