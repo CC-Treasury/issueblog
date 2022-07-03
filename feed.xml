@@ -5,7 +5,7 @@
     
     <link>https://cc-treasury.github.io/issueblog/</link>
     <generator>https://github.com/herschel666/microblog-action</generator>
-    <lastBuildDate>Sun, 3 Jul 2022 16:16:26 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 3 Jul 2022 16:17:38 +0000</lastBuildDate>
     
     <item>
       <title>Town Hall Slides -  Wednesday, 27th April, 2022</title>
@@ -113,10 +113,20 @@
       <guid isPermaLink="false">1137048583</guid>
       <pubDate>Mon, 14 Feb 2022 09:54:36 +0000</pubDate>
       <description>
-        <![CDATA[<p>This is the body. wefwef
-ewfwef
-Testing 1 2 okay23e
-wf</p>
+        <![CDATA[<p>{
+"id" : "1656843114368",
+"date": "Sun, 03 Jul 2022 10:11:54 GMT",
+"fund": "Fund8",
+"project": "Lead-Generators",
+"proposal": "Community-Lead-Generation",
+"ideascale": "<a href="https://cardano.ideascale.com/c/idea/397339">https://cardano.ideascale.com/c/idea/397339</a>",
+"budget": "Incoming",
+"name": "Andre",
+"exchange-rate": "0.55 USD per ADA",
+"Wallet balance": ["27300.00 ADA"],
+"txid": "fwef4r2433",
+"description": "TEst description"
+}</p>
 ]]>
       </description>
     </item>
