@@ -2,7 +2,7 @@ name: Weekly Report
 on:
   workflow_dispatch:
   schedule:
-    - cron: '10 * * * *' # At 06:00 on Sunday
+    - cron: '20 * * * *' # At 06:00 on Sunday
 jobs:
   run:
     runs-on: ubuntu-latest
