@@ -25,7 +25,7 @@ jobs:
            ```md
            /* ADA - ${{ fromJSON(github.event.issue.body).ada }} *
            /* GMBL - ${{ fromJSON(github.event.issue.body).gmbl }} *
-           /* AGIX - ${{ fromJSON(github.event.issue.body).agix }} *```
+           < AGIX - ${{ fromJSON(github.event.issue.body).agix }} >```
            ```md
            < Wallet Balance - ${{ fromJSON(github.event.issue.body).wallet-balance[0] }} ${{ fromJSON(github.event.issue.body).wallet-balance[1] }} ${{ fromJSON(github.event.issue.body).wallet-balance[2] }}
            Description - ${{ fromJSON(github.event.issue.body).description }} >```
