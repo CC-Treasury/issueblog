@@ -30,7 +30,7 @@ jobs:
            AGIX - ${{ fromJSON(github.event.issue.body).agix }}
            Exchange Rate - ${{ fromJSON(github.event.issue.body).exchange-rate }}
            [Transaction ID](https://cardanoscan.io/transaction/${{ fromJSON(github.event.issue.body).txid }})
-           Wallet Balance - ${{ fromJSON(github.event.issue.body).wallet-balance[0] }}
+           Wallet Balance - ${{ fromJSON(github.event.issue.body).wallet-balance[0..3] }}
            Description - ${{ fromJSON(github.event.issue.body).description }}
            [GitBook](https://treasury-guild.gitbook.io/cardano4climate/)
            Some Markdown text with 😎👀⫸⫷⚡🗓💰
