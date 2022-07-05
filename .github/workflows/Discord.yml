@@ -21,10 +21,13 @@ jobs:
          description: "Payment Notification"
          details: |
            ${{ fromJSON(github.event.issue.body).date }} 
+           ${{ fromJSON(github.event.issue.body).fund }}
            ${{ fromJSON(github.event.issue.body).project }}
+           Budget - ${{ fromJSON(github.event.issue.body).budget }}
            [${{ fromJSON(github.event.issue.body).proposal }}](${{ fromJSON(github.event.issue.body).ideascale }})
            https://cardanoscan.io/transaction/${{ fromJSON(github.event.issue.body).txid }}
            Wallet Balance - ${{ fromJSON(github.event.issue.body).wallet-balance }}
+           Description - ${{ fromJSON(github.event.issue.body).description }}
            https://treasury-guild.gitbook.io/cardano4climate/
            Testing
            Some Markdown text with 😎👀⫸⫷
