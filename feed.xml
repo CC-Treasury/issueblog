@@ -5,7 +5,7 @@
     
     <link>https://cc-treasury.github.io/issueblog/</link>
     <generator>https://github.com/herschel666/microblog-action</generator>
-    <lastBuildDate>Tue, 5 Jul 2022 16:45:41 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 5 Jul 2022 16:46:38 +0000</lastBuildDate>
     
     <item>
       <title>Town Hall Slides -  Wednesday, 27th April, 2022</title>
@@ -126,7 +126,7 @@
 "ada" : "50",
 "gmbl" : "50",
 "agix" : "50",
-"Wallet balance": ["683.00 ADA", "84415.00 GMBL", "10750.00 AGIX"],
+"wallet-balance": ["683.00 ADA", "84415.00 GMBL", "10750.00 AGIX"],
 "txid": "",
 "description": "Timestamping"
 }</p>
