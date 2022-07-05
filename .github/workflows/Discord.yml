@@ -20,9 +20,9 @@ jobs:
          avatarUrl: https://github.com/CC-Treasury/issueblog/raw/main/Untitled-1.png
          description: "Payment Notification"
          details: |
-           |${{ fromJSON(github.event.issue.body).date }}|${{ fromJSON(github.event.issue.body).fund }}|${{ fromJSON(github.event.issue.body).project }}|
-           |---|---|---|
-           Budget - ${{ fromJSON(github.event.issue.body).budget }}
+           | ${{ fromJSON(github.event.issue.body).date }} | ${{ fromJSON(github.event.issue.body).fund }} | ${{ fromJSON(github.event.issue.body).project }} |
+           | --- | --- | --- |
+           | Budget - ${{ fromJSON(github.event.issue.body).budget }} | --- | --- |
            Ideascale - [${{ fromJSON(github.event.issue.body).proposal }}](${{ fromJSON(github.event.issue.body).ideascale }})
            https://cardanoscan.io/transaction/${{ fromJSON(github.event.issue.body).txid }}
            Wallet Balance - ${{ fromJSON(github.event.issue.body).wallet-balance[1] }}
