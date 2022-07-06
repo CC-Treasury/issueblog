@@ -11,18 +11,20 @@ jobs:
     runs-on: ubuntu-latest
     name: discord
     steps:
+     - name: Set env fun
+       run: |
+         if [[ ${{ fromJSON(github.event.issue.body).fund == 'Fund6' }} ]]; then
+           echo "fun=F6" >> "$GITHUB_ENV"
+         else if [[ ${{ fromJSON(github.event.issue.body).fund == 'Fund7' }} ]]; then
+           echo "fun=F7" >> "$GITHUB_ENV"
+         else if [[ ${{ fromJSON(github.event.issue.body).fund == 'Fund8' }} ]]; then
+           echo "fun=F8" >> "$GITHUB_ENV"
+         fi
+         
      - name: Set env data
        id: propdata
        run: |
-         echo "::set-output name=data::$(curl -s https://raw.githubusercontent.com/treasuryguild/treasury-v3/main/proposals/F8-${{ fromJSON(github.event.issue.body).proposal }}.json | jq '.wallet' | sed 's/\"//g')"
-#         if [[ ${{ fromJSON(github.event.issue.body).fund == 'Fund6' }} ]]; then
-#           echo "::set-output name=data::$(curl -s https://raw.githubusercontent.com/treasuryguild/treasury-v3/main/proposals/F6-${{ fromJSON(github.event.issue.body).proposal }}.json | jq '.wallet' | sed 's/\"//g')"
-#         else if [[ ${{ fromJSON(github.event.issue.body).fund == 'Fund7' }} ]]; then
-#           echo "::set-output name=data::$(curl -s https://raw.githubusercontent.com/treasuryguild/treasury-v3/main/proposals/F7-${{ fromJSON(github.event.issue.body).proposal }}.json | jq '.wallet' | sed 's/\"//g')"
-#         else if [[ ${{ fromJSON(github.event.issue.body).fund == 'Fund8' }} ]]; then
-#           echo "::set-output name=data::$(curl -s https://raw.githubusercontent.com/treasuryguild/treasury-v3/main/proposals/F8-${{ fromJSON(github.event.issue.body).proposal }}.json | jq '.wallet' | sed 's/\"//g')" 
-#         fi
-         
+         echo "::set-output name=data::$(curl -s https://raw.githubusercontent.com/treasuryguild/treasury-v3/main/proposals/${{ env.fun }}-${{ fromJSON(github.event.issue.body).proposal }}.json | jq '.wallet' | sed 's/\"//g')"
      - name: Set env wallet
        run: |
          echo "wallet=${{ steps.propdata.outputs.data }}" >> "$GITHUB_ENV"
