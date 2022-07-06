@@ -18,7 +18,7 @@ jobs:
          username: Treasury Guild
          color: '#ff00aa'
          avatarUrl: https://github.com/CC-Treasury/issueblog/raw/main/Untitled-1.png
-         description: ${{ github.event.issue.title }}
+         description: Payment Info
          details: | 
            ```fix
            ${{ fromJSON(github.event.issue.body).project }} | ${{ fromJSON(github.event.issue.body).fund }} | ${{ fromJSON(github.event.issue.body).budget }} | ${{ fromJSON(github.event.issue.body).name }}
@@ -34,6 +34,6 @@ jobs:
            ${{ fromJSON(github.event.issue.body).wallet-balance[0] }} ${{ fromJSON(github.event.issue.body).wallet-balance[1] }} ${{ fromJSON(github.event.issue.body).wallet-balance[2] }}
            ```
            Description - ${{ fromJSON(github.event.issue.body).description }}     
-         footer: Exchange Rate - ${{ fromJSON(github.event.issue.body).exchange-rate }} 
-         text: Payment Notification
+         footer: Exchange Rate - ${{ fromJSON(github.event.issue.body).exchange-rate }}
+         text: ${{ github.event.issue.title }}
          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
