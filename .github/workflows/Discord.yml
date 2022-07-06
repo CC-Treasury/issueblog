@@ -3,13 +3,13 @@ on:
   issues:
     types: [closed]
   workflow_dispatch:
+env: 
+  fund: ${{ fromJSON(github.event.issue.body).fund }}  
  # schedule:
     # run every 8 hours
   #  - cron:  '0 0,8,16 * * *'
 jobs:
   issue:
-    env: 
-      fund: ${{ fromJSON(github.event.issue.body).fund }}
     runs-on: ubuntu-latest
     name: discord
     steps:
