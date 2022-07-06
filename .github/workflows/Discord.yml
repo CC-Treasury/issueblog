@@ -57,7 +57,7 @@ jobs:
            `Payment Amount` - [CardanoScan](https://cardanoscan.io/transaction/${{ fromJSON(github.event.issue.body).txid }}) - [GitBook](https://treasury-guild.gitbook.io/cardano4climate/)
            ```md
            * ADA - ${{ fromJSON(github.event.issue.body).ada }} 
-           * GMBL - ${{ (if fromJSON(github.event.issue.body).gmbl > 0) ? fromJSON(github.event.issue.body).gmbl : 0 }}
+           * GMBL - ${{ fromJSON(github.event.issue.body).gmbl > 0 ? fromJSON(github.event.issue.body).gmbl : 0 }}
            * AGIX - ${{ fromJSON(github.event.issue.body).agix }}
            ```
            `Description` - `${{ fromJSON(github.event.issue.body).description }}`
