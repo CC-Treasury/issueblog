@@ -35,6 +35,7 @@ jobs:
            ${{ fromJSON(github.event.issue.body).wallet-balance[0] }} ${{ fromJSON(github.event.issue.body).wallet-balance[1] }} ${{ fromJSON(github.event.issue.body).wallet-balance[2] }}
            ```
            `Description` - `${{ fromJSON(github.event.issue.body).description }}`    
-         footer: Exchange Rate - ${{ fromJSON(github.event.issue.body).exchange-rate }}
+         footer: |
+           `Exchange Rate - ${{ fromJSON(github.event.issue.body).exchange-rate }}`
          text: ${{ github.event.issue.title }}
          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
