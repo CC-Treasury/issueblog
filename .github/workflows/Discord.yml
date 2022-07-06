@@ -18,12 +18,11 @@ jobs:
          username: Treasury Guild
          color: '#ff00aa'
          avatarUrl: https://github.com/CC-Treasury/issueblog/raw/main/Untitled-1.png
-         description: Payment Notification 
          details: | 
            ```fix
            ${{ fromJSON(github.event.issue.body).project }} | ${{ fromJSON(github.event.issue.body).fund }} | ${{ fromJSON(github.event.issue.body).budget }} | ${{ fromJSON(github.event.issue.body).name }}
            ```
-           Exchange Rate - ${{ fromJSON(github.event.issue.body).exchange-rate }} | [Transaction ID](https://cardanoscan.io/transaction/${{ fromJSON(github.event.issue.body).txid }}) | [GitBook](https://treasury-guild.gitbook.io/cardano4climate/)
+           Payment | Exchange Rate - ${{ fromJSON(github.event.issue.body).exchange-rate }} | [CardanoScan](https://cardanoscan.io/transaction/${{ fromJSON(github.event.issue.body).txid }}) | [GitBook](https://treasury-guild.gitbook.io/cardano4climate/)
            ```md
            * ADA - ${{ fromJSON(github.event.issue.body).ada }} 
            * GMBL - ${{ fromJSON(github.event.issue.body).gmbl }}
