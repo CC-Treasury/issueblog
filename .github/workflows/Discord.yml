@@ -44,7 +44,7 @@ jobs:
            ```
            `Description` - `${{ fromJSON(github.event.issue.body).description }}`
            
-           `Wallet Balance of` [${{ fromJSON(github.event.issue.body).proposal }}]( $wallet )
+           `Wallet Balance of` $wallet [${{ fromJSON(github.event.issue.body).proposal }}]( $wallet )
            ```css
            ${{ fromJSON(github.event.issue.body).wallet-balance[0] }} ${{ fromJSON(github.event.issue.body).wallet-balance[1] }} ${{ fromJSON(github.event.issue.body).wallet-balance[2] }}
            ```    
