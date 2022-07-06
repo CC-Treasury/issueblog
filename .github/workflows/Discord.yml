@@ -50,7 +50,7 @@ jobs:
            ```
            `Description` - `${{ fromJSON(github.event.issue.body).description }}`
            
-           `Wallet Balance of` $wallet [${{ fromJSON(github.event.issue.body).proposal }}]( ${{ env.wallet }} )
+           `Wallet Balance of` ${{ env.wallet }} [${{ fromJSON(github.event.issue.body).proposal }}]( ${{ env.wallet }} )
            ```css
            ${{ fromJSON(github.event.issue.body).wallet-balance[0] }} ${{ fromJSON(github.event.issue.body).wallet-balance[1] }} ${{ fromJSON(github.event.issue.body).wallet-balance[2] }}
            ```    
