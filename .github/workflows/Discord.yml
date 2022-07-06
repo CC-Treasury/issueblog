@@ -4,7 +4,7 @@ on:
     types: [closed]
   workflow_dispatch:
 env: 
-  fund: ${{ fromJSON(github.event.issue.body).fund }}  
+  fundR: ${{ fromJSON(github.event.issue.body).fund }}  
  # schedule:
     # run every 8 hours
   #  - cron:  '0 0,8,16 * * *'
@@ -15,14 +15,11 @@ jobs:
     steps:
      - name: Set env fun
        run: |
-         if $fund == 'Fund6'; then
-           echo "fun=F6" >> $GITHUB_ENV
-         else if $fund == 'Fund7'; then
-           echo "fun=F7" >> $GITHUB_ENV
-         else if $fund == 'Fund8'; then
-           echo "fun=F8" >> $GITHUB_ENV
-         fi
-         
+          if [[ $fundR == 'Fund8' ]]; then
+              echo "fun=F8" >> "$GITHUB_ENV"
+          else
+              echo "fun=F6" >> "$GITHUB_ENV"
+          fi
      - name: Set env data
        id: propdata
        run: |
