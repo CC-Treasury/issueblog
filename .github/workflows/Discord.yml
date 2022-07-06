@@ -18,6 +18,7 @@ jobs:
          username: Treasury Guild
          color: '#ff00aa'
          avatarUrl: https://github.com/CC-Treasury/issueblog/raw/main/Untitled-1.png
+         description: ${{ github.event.issue.title }}
          details: | 
            ```fix
            ${{ fromJSON(github.event.issue.body).project }} | ${{ fromJSON(github.event.issue.body).fund }} | ${{ fromJSON(github.event.issue.body).budget }} | ${{ fromJSON(github.event.issue.body).name }}
