@@ -17,7 +17,7 @@ jobs:
     steps:
      - name: Set env data
        run: |
-         echo "data=curl -X GET "https://raw.githubusercontent.com/treasuryguild/treasury-v3/main/proposals/F8-${{ fromJSON(github.event.issue.body).proposal }}.json" >> "$GITHUB_ENV"
+         echo "data=curl -X GET "https://raw.githubusercontent.com/treasuryguild/treasury-v3/main/proposals/F8-${{ fromJSON(github.event.issue.body).proposal }}.json"" >> "$GITHUB_ENV"
      - name: Set env wallet
        run: |
          echo "wallet=$data.data.wallet" >> "$GITHUB_ENV"
