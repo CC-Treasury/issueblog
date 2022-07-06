@@ -18,16 +18,19 @@ jobs:
          username: Treasury Guild
          color: '#ff00aa'
          avatarUrl: https://github.com/CC-Treasury/issueblog/raw/main/Untitled-1.png
-         description: Payment Notification ${{ fromJSON(github.event.issue.body).date }}
+         description: Payment Notification 
          details: | 
-           ```${{ fromJSON(github.event.issue.body).project }} | ${{ fromJSON(github.event.issue.body).fund }} | ${{ fromJSON(github.event.issue.body).budget }}```
+           ```fix
+           ${{ fromJSON(github.event.issue.body).project }} | ${{ fromJSON(github.event.issue.body).fund }} | ${{ fromJSON(github.event.issue.body).budget }} | ${{ fromJSON(github.event.issue.body).name }}
+           ```
            Exchange Rate - ${{ fromJSON(github.event.issue.body).exchange-rate }} | [Transaction ID](https://cardanoscan.io/transaction/${{ fromJSON(github.event.issue.body).txid }}) | [GitBook](https://treasury-guild.gitbook.io/cardano4climate/)
            ```md
            * ADA - ${{ fromJSON(github.event.issue.body).ada }} 
            * GMBL - ${{ fromJSON(github.event.issue.body).gmbl }}
-           * AGIX - ${{ fromJSON(github.event.issue.body).agix }}```
-           Wallet Balance of < Ideascale > - [${{ fromJSON(github.event.issue.body).proposal }}](${{ fromJSON(github.event.issue.body).ideascale }})
-           ```md
+           * AGIX - ${{ fromJSON(github.event.issue.body).agix }}
+           ```
+           Wallet Balance of - [${{ fromJSON(github.event.issue.body).proposal }}](${{ fromJSON(github.event.issue.body).ideascale }})
+           ```css
            ${{ fromJSON(github.event.issue.body).wallet-balance[0] }} ${{ fromJSON(github.event.issue.body).wallet-balance[1] }} ${{ fromJSON(github.event.issue.body).wallet-balance[2] }}
            ```
            Description - ${{ fromJSON(github.event.issue.body).description }}     
