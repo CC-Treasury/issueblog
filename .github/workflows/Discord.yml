@@ -20,7 +20,7 @@ jobs:
          color: '#03fc2c'
          avatarUrl: https://github.com/CC-Treasury/issueblog/raw/main/Untitled-1.png
          description: |
-           `Payment Info` - [Ideascale](${{ fromJSON(github.event.issue.body).ideascale }})
+           `Payment Info - ${{ fromJSON(github.event.issue.body).project }}` - [Ideascale](${{ fromJSON(github.event.issue.body).ideascale }})
          details: | 
            ```fix
            ${{ fromJSON(github.event.issue.body).project }} | ${{ fromJSON(github.event.issue.body).fund }} | ${{ fromJSON(github.event.issue.body).budget }} | = ${{ fromJSON(github.event.issue.body).name }}
@@ -49,7 +49,7 @@ jobs:
          color: '#ff00aa'
          avatarUrl: https://github.com/CC-Treasury/issueblog/raw/main/Untitled-1.png
          description: |
-           `Payment Info` - [Ideascale](${{ fromJSON(github.event.issue.body).ideascale }})
+           `Payment Info - ${{ fromJSON(github.event.issue.body).project }}` - [Ideascale](${{ fromJSON(github.event.issue.body).ideascale }})
          details: | 
            ```fix
            ${{ fromJSON(github.event.issue.body).project }} | ${{ fromJSON(github.event.issue.body).fund }} | ${{ fromJSON(github.event.issue.body).budget }} | = ${{ fromJSON(github.event.issue.body).name }}
