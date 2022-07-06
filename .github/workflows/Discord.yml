@@ -21,13 +21,13 @@ jobs:
  #             echo "fun=F6" >> "$GITHUB_ENV"
  #         fi
      - name: Fund 6
-       if: ${{ $fundR == 'Fund6' }}
+       if: ${{ env.fundR == 'Fund6' }}
        run: echo "fun=F6" >> "$GITHUB_ENV"
      - name: Fund 7
-       if: ${{ $fundR == 'Fund7' }}
+       if: ${{ env.fundR == 'Fund7' }}
        run: echo "fun=F7" >> "$GITHUB_ENV"
      - name: Fund 8
-       if: ${{ $fundR == 'Fund8' }}
+       if: ${{ env.fundR == 'Fund8' }}
        run: echo "fun=F8" >> "$GITHUB_ENV"
        
      - name: Set env data
