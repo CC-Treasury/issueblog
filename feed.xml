@@ -5,7 +5,7 @@
     
     <link>https://cc-treasury.github.io/issueblog/</link>
     <generator>https://github.com/herschel666/microblog-action</generator>
-    <lastBuildDate>Wed, 6 Jul 2022 15:33:32 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 6 Jul 2022 15:36:05 +0000</lastBuildDate>
     
     <item>
       <title>Town Hall Slides -  Wednesday, 27th April, 2022</title>
@@ -103,6 +103,33 @@
       <description>
         <![CDATA[<p>thisid is a test</p>
 <p>testin 2</p>
+]]>
+      </description>
+    </item>
+    
+    <item>
+      <title>50 ADA 50 GMBL 50 AGIX  Outgoing</title>
+      <link>https://cc-treasury.github.io/issueblog/posts/1137048583.html</link>
+      <guid isPermaLink="false">1137048583</guid>
+      <pubDate>Mon, 14 Feb 2022 09:54:36 +0000</pubDate>
+      <description>
+        <![CDATA[<p>{
+"id" : "1657096519394",
+"date": "Wed, 06 Jul 2022 08:35:19 GMT",
+"fund": "Fund7",
+"project": "Swarm",
+"proposal": "Treasury-Swarm-pool-Rewards",
+"ideascale": "<a href="https://cardano.ideascale.com/c/idea/402129">https://cardano.ideascale.com/c/idea/402129</a>",
+"budget": "Bounty",
+"name": "Newman",
+"exchange-rate": "0.47 USD per ADA",
+"ada" : "50",
+"gmbl" : "50",
+"agix" : "50",
+"wallet-balance": ["683.00 ADA", "84415.00 GMBL", "10750.00 AGIX"],
+"txid": "",
+"description": "Payment for 3x timestamp videos"
+}</p>
 ]]>
       </description>
     </item>
