@@ -10,6 +10,7 @@ env:
   Treasury-Swarm-pool-Rewards: "https://pool.pm/addr1q94qwx2x5xyg8j35g8hu5d3tupvgrajljdy0c9x3fcxt7m9vgqyp479ltqd20tht8htrw6rp4yplryecgumdf9he3glqvunqga"
   After-Town-Hall-by-Catalyst-Swarm: "https://pool.pm/addr1qyh4e3njg4azrtatd6wjaeyc2wtwstkec4x7uyhl4e7zwskge8q526y5ltxhua00nacfpwdpezuzxdkm8mzuzdne00kqtxdegs"
   proposal: ${{ fromJSON(github.event.issue.body).proposal }}
+  wallet: "@metawallet"
 jobs:
   issue:
     runs-on: ubuntu-latest
@@ -37,7 +38,7 @@ jobs:
            ```
            `Description` - `${{ fromJSON(github.event.issue.body).description }}`
            
-           `Wallet Balance of` [${{ fromJSON(github.event.issue.body).proposal }}](${{ env.(env.proposal) }})
+           `Wallet Balance of` [${{ fromJSON(github.event.issue.body).proposal }}](${{ env.wallet }})
            ```css
            ${{ fromJSON(github.event.issue.body).wallet-balance[0] }} ${{ fromJSON(github.event.issue.body).wallet-balance[1] }} ${{ fromJSON(github.event.issue.body).wallet-balance[2] }}
            ```    
@@ -66,7 +67,7 @@ jobs:
            ```
            `Description` - `${{ fromJSON(github.event.issue.body).description }}`
            
-           `Wallet Balance of` [${{ fromJSON(github.event.issue.body).proposal }}](${{ env.(env.proposal) }})
+           `Wallet Balance of` [${{ fromJSON(github.event.issue.body).proposal }}](${{ env.wallet }})
            ```css
            ${{ fromJSON(github.event.issue.body).wallet-balance[0] }} ${{ fromJSON(github.event.issue.body).wallet-balance[1] }} ${{ fromJSON(github.event.issue.body).wallet-balance[2] }}
            ```    
