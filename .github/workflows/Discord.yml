@@ -13,13 +13,23 @@ jobs:
     runs-on: ubuntu-latest
     name: discord
     steps:
-     - name: Set env fun
-       run: |
-          if [[ $fundR == 'Fund8' ]]; then
-              echo "fun=F8" >> "$GITHUB_ENV"
-          else 
-              echo "fun=F6" >> "$GITHUB_ENV"
-          fi
+ #    - name: Set env fun
+ #      run: |
+ #         if [[ $fundR == 'Fund8' ]]; then
+ #             echo "fun=F8" >> "$GITHUB_ENV"
+ #         else 
+ #             echo "fun=F6" >> "$GITHUB_ENV"
+ #         fi
+     - name: Fund 6
+       if: ${{ $fundR == 'Fund6' }}
+       run: echo "fun=F6" >> "$GITHUB_ENV"
+     - name: Fund 7
+       if: ${{ $fundR == 'Fund7' }}
+       run: echo "fun=F7" >> "$GITHUB_ENV"
+     - name: Fund 8
+       if: ${{ $fundR == 'Fund8' }}
+       run: echo "fun=F8" >> "$GITHUB_ENV"
+       
      - name: Set env data
        id: propdata
        run: |
