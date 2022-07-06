@@ -15,11 +15,11 @@ jobs:
     steps:
      - name: Set env fun
        run: |
-         if [[ env.fund == 'Fund6' ]]; then
+         if $fund == 'Fund6'; then
            echo "fun=F6" >> $GITHUB_ENV
-         else if [[ env.fund == 'Fund7' ]]; then
+         else if $fund == 'Fund7'; then
            echo "fun=F7" >> $GITHUB_ENV
-         else if [[ env.fund == 'Fund8' ]]; then
+         else if $fund == 'Fund8'; then
            echo "fun=F8" >> $GITHUB_ENV
          fi
          
