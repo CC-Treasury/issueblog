@@ -18,7 +18,8 @@ jobs:
          username: Treasury Guild
          color: '#ff00aa'
          avatarUrl: https://github.com/CC-Treasury/issueblog/raw/main/Untitled-1.png
-         description: Payment Info - [Ideascale](${{ fromJSON(github.event.issue.body).ideascale }})
+         description: |
+           `Payment Info` - [Ideascale](${{ fromJSON(github.event.issue.body).ideascale }})
          details: | 
            ```fix
            ${{ fromJSON(github.event.issue.body).project }} | ${{ fromJSON(github.event.issue.body).fund }} | ${{ fromJSON(github.event.issue.body).budget }} | = ${{ fromJSON(github.event.issue.body).name }}
@@ -29,7 +30,7 @@ jobs:
            * GMBL - ${{ fromJSON(github.event.issue.body).gmbl }}
            * AGIX - ${{ fromJSON(github.event.issue.body).agix }}
            ```
-           `Wallet Balance of` [${{ fromJSON(github.event.issue.body).proposal }}](${{ fromJSON(github.event.issue.body).ideascale }})
+           `Wallet Balance of` [${{ fromJSON(github.event.issue.body).proposal }}](https://pool.pm/addr1q94qwx2x5xyg8j35g8hu5d3tupvgrajljdy0c9x3fcxt7m9vgqyp479ltqd20tht8htrw6rp4yplryecgumdf9he3glqvunqga)
            ```css
            ${{ fromJSON(github.event.issue.body).wallet-balance[0] }} ${{ fromJSON(github.event.issue.body).wallet-balance[1] }} ${{ fromJSON(github.event.issue.body).wallet-balance[2] }}
            ```
