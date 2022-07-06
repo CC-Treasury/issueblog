@@ -20,7 +20,7 @@ jobs:
          echo "data=curl -X GET "https://raw.githubusercontent.com/treasuryguild/treasury-v3/main/proposals/F8-${{ fromJSON(github.event.issue.body).proposal }}.json"" >> "$GITHUB_ENV"
      - name: Set env wallet
        run: |
-         echo "wallet=fromJSON($data).wallet" >> "$GITHUB_ENV"
+         echo "wallet=$data.wallet" >> "$GITHUB_ENV"
      #     if [[ $proposal == 'Treasury-Swarm-pool-Rewards' ]]; then
       #        echo "wallet=https://pool.pm/addr1q94qwx2x5xyg8j35g8hu5d3tupvgrajljdy0c9x3fcxt7m9vgqyp479ltqd20tht8htrw6rp4yplryecgumdf9he3glqvunqga" >> "$GITHUB_ENV"
      #     else if [[ $proposal == 'After-Town-Hall-by-Catalyst-Swarm' ]]; then
