@@ -5,7 +5,7 @@
     
     <link>https://cc-treasury.github.io/issueblog/</link>
     <generator>https://github.com/herschel666/microblog-action</generator>
-    <lastBuildDate>Wed, 6 Jul 2022 08:30:25 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 6 Jul 2022 08:31:53 +0000</lastBuildDate>
     
     <item>
       <title>Town Hall Slides -  Wednesday, 27th April, 2022</title>
@@ -114,19 +114,19 @@
       <pubDate>Mon, 14 Feb 2022 09:54:36 +0000</pubDate>
       <description>
         <![CDATA[<p>{
-"id" : "1657035973149",
-"date": "Tue, 05 Jul 2022 15:46:13 GMT",
+"id" : "1657096248321",
+"date": "Wed, 06 Jul 2022 08:30:48 GMT",
 "fund": "Fund8",
 "project": "Swarm",
-"proposal": "Treasury-Swarm-pool-Rewards",
-"ideascale": "<a href="https://cardano.ideascale.com/c/idea/402129">https://cardano.ideascale.com/c/idea/402129</a>",
+"proposal": "Catalyst-Africa-Town-Hall",
+"ideascale": "<a href="https://cardano.ideascale.com/c/idea/401713">https://cardano.ideascale.com/c/idea/401713</a>",
 "budget": "Incoming",
 "name": "IOG",
 "exchange-rate": "0.46 USD per ADA",
-"ada" : "50000",
-"wallet-balance": ["683.00 ADA", "84415.00 GMBL", "10750.00 AGIX"],
-"txid": "6bb1c212a9c1a182cf3f29f35529ebea352c44ec112a3499fb69c0f3261d823e",
-"description": "First Instalment from IOG"
+"ada" : "500",
+"wallet-balance": ["12302.00 ADA"],
+"txid": "fw3223t3424334t34t",
+"description": "Friseff instalmefnewfe"
 }</p>
 ]]>
       </description>
