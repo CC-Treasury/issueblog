@@ -10,18 +10,25 @@ env:
   Treasury-Swarm-pool-Rewards: "https://pool.pm/addr1q94qwx2x5xyg8j35g8hu5d3tupvgrajljdy0c9x3fcxt7m9vgqyp479ltqd20tht8htrw6rp4yplryecgumdf9he3glqvunqga"
   After-Town-Hall-by-Catalyst-Swarm: "https://pool.pm/addr1qyh4e3njg4azrtatd6wjaeyc2wtwstkec4x7uyhl4e7zwskge8q526y5ltxhua00nacfpwdpezuzxdkm8mzuzdne00kqtxdegs"
   proposal: ${{ fromJSON(github.event.issue.body).proposal }}
+  data: ""
 jobs:
   issue:
     runs-on: ubuntu-latest
     name: discord
     steps:
+     - name: Set env data
+       run: |
+         echo "data=curl -X GET "https://raw.githubusercontent.com/treasuryguild/Catalyst-Swarm/main/proposals/F8-${{ fromJSON(github.event.issue.body).proposal }}.json" >> "$GITHUB_ENV"
      - name: Set env wallet
        run: |
-          if [[ $proposal == 'Treasury-Swarm-pool-Rewards' ]]; then
-              echo "wallet=https://pool.pm/addr1q94qwx2x5xyg8j35g8hu5d3tupvgrajljdy0c9x3fcxt7m9vgqyp479ltqd20tht8htrw6rp4yplryecgumdf9he3glqvunqga" >> "$GITHUB_ENV"
-          else
-              echo "wallet=https://pool.pm/addr1qyh4e3njg4azrtatd6wjaeyc2wtwstkec4x7uyhl4e7zwskge8q526y5ltxhua00nacfpwdpezuzxdkm8mzuzdne00kqtxdegs" >> "$GITHUB_ENV"
-          fi
+         echo "wallet=$data.wallet" >> "$GITHUB_ENV"
+     #     if [[ $proposal == 'Treasury-Swarm-pool-Rewards' ]]; then
+      #        echo "wallet=https://pool.pm/addr1q94qwx2x5xyg8j35g8hu5d3tupvgrajljdy0c9x3fcxt7m9vgqyp479ltqd20tht8htrw6rp4yplryecgumdf9he3glqvunqga" >> "$GITHUB_ENV"
+     #     else if [[ $proposal == 'After-Town-Hall-by-Catalyst-Swarm' ]]; then
+     #         echo "wallet=https://pool.pm/addr1qyh4e3njg4azrtatd6wjaeyc2wtwstkec4x7uyhl4e7zwskge8q526y5ltxhua00nacfpwdpezuzxdkm8mzuzdne00kqtxdegs" >> "$GITHUB_ENV"
+     #     else if [[ $proposal == 'Catalyst-Africa-Town-Hall' ]]; then
+      #        echo "wallet=https://pool.pm/addr1q9ptnru29udph4hfmz5hxm8utph5lz9sn5fw74v6x5f4hxtvukku9nlrm9fuy4xx2dq4w5utk5ajhu2raqff0xf0y35smprpjp" >> "$GITHUB_ENV"
+     #     fi
      - name: Test Custom
        if: ${{ (github.event.issue.labels[0].name == 'Incoming' && fromJSON(github.event.issue.body).proposal == 'Treasury-Swarm-pool-Rewards') }}
        uses: rjstone/discord-webhook-notify@v1
