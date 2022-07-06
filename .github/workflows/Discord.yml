@@ -23,7 +23,7 @@ jobs:
            ```fix
            ${{ fromJSON(github.event.issue.body).project }} | ${{ fromJSON(github.event.issue.body).fund }} | ${{ fromJSON(github.event.issue.body).budget }} | ${{ fromJSON(github.event.issue.body).name }}
            ```
-           Payment | Exchange Rate - ${{ fromJSON(github.event.issue.body).exchange-rate }} | [CardanoScan](https://cardanoscan.io/transaction/${{ fromJSON(github.event.issue.body).txid }}) | [GitBook](https://treasury-guild.gitbook.io/cardano4climate/)
+           Payment | [CardanoScan](https://cardanoscan.io/transaction/${{ fromJSON(github.event.issue.body).txid }}) | [GitBook](https://treasury-guild.gitbook.io/cardano4climate/)
            ```md
            * ADA - ${{ fromJSON(github.event.issue.body).ada }} 
            * GMBL - ${{ fromJSON(github.event.issue.body).gmbl }}
@@ -34,6 +34,6 @@ jobs:
            ${{ fromJSON(github.event.issue.body).wallet-balance[0] }} ${{ fromJSON(github.event.issue.body).wallet-balance[1] }} ${{ fromJSON(github.event.issue.body).wallet-balance[2] }}
            ```
            Description - ${{ fromJSON(github.event.issue.body).description }}     
-         footer: Some Markdown text with 😎👀⫸⫷⚡🗓💰
-         text: ${{ github.event.issue.title }}
+         footer: Exchange Rate - ${{ fromJSON(github.event.issue.body).exchange-rate }} 
+         text: Payment Notification
          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
