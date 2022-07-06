@@ -8,7 +8,7 @@ on:
   #  - cron:  '0 0,8,16 * * *'
 jobs:
   issue:
-    if: ${{ github.event.label.name == 'Outgoing' }}
+    if: ${{ github.event.issue.labels[0].name == 'Outgoing' }}
     runs-on: ubuntu-latest
     name: discord
     steps:
