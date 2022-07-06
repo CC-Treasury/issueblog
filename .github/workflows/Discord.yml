@@ -10,8 +10,6 @@ jobs:
   issue:
     runs-on: ubuntu-latest
     name: discord
-    env:
-      fun: ${{ fromJSON(github.event.issue.body).fund }}
     steps:
      - name: Set env data
        id: propdata
