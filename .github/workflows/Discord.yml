@@ -22,7 +22,7 @@ jobs:
           else if [[ $fundR == 'Fund6' ]]; then
               echo "fun=F6" >> "$GITHUB_ENV"
           else
-              echo "fun=F6" >> "$GITHUB_ENV"
+              echo "fun=F9" >> "$GITHUB_ENV"
           fi
      - name: Set env data
        id: propdata
