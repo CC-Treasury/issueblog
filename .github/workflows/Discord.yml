@@ -16,14 +16,13 @@ jobs:
      - name: Set env data
        id: propdata
        run: |
-         if [[ $fun == 'Fund6' ]]; then
+         if [[ env.fun == 'Fund6' ]]; then
               echo "::set-output name=data::$(curl -s https://raw.githubusercontent.com/treasuryguild/treasury-v3/main/proposals/F6-${{ fromJSON(github.event.issue.body).proposal }}.json | jq '.wallet' | sed 's/\"//g')"
-          else if [[ $fun == 'Fund7' ]]; then
+          else if [[ env.fun == 'Fund7' ]]; then
               echo "::set-output name=data::$(curl -s https://raw.githubusercontent.com/treasuryguild/treasury-v3/main/proposals/F7-${{ fromJSON(github.event.issue.body).proposal }}.json | jq '.wallet' | sed 's/\"//g')"
-          else if [[ $fun == 'Fund8' ]]; then
+          else if [[ env.fun == 'Fund8' ]]; then
               echo "::set-output name=data::$(curl -s https://raw.githubusercontent.com/treasuryguild/treasury-v3/main/proposals/F8-${{ fromJSON(github.event.issue.body).proposal }}.json | jq '.wallet' | sed 's/\"//g')"    
           fi
-  #       echo "::set-output name=data::$(curl -s https://raw.githubusercontent.com/treasuryguild/treasury-v3/main/proposals/F8-${{ fromJSON(github.event.issue.body).proposal }}.json | jq '.wallet' | sed 's/\"//g')"
      - name: Set env wallet
        run: |
          echo "wallet=${{ steps.propdata.outputs.data }}" >> "$GITHUB_ENV"
