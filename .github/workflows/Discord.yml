@@ -4,7 +4,8 @@ on:
     types: [closed]
   workflow_dispatch:
 env: 
-  fundR: ${{ fromJSON(github.event.issue.body).fund }}  
+  fundR: ${{ fromJSON(github.event.issue.body).fund }} 
+  GitB: "catalyst-swarm"
  # schedule:
     # run every 8 hours
   #  - cron:  '0 0,8,16 * * *'
@@ -51,7 +52,7 @@ jobs:
            ```fix
            ${{ fromJSON(github.event.issue.body).proposal }} | ${{ fromJSON(github.event.issue.body).budget }} | = ${{ fromJSON(github.event.issue.body).name }}
            ```
-           `Amount Received` - [CardanoScan](https://cardanoscan.io/transaction/${{ fromJSON(github.event.issue.body).txid }}) - [GitBook](https://treasury-guild.gitbook.io/cardano4climate/)
+           `Amount Received` - [CardanoScan](https://cardanoscan.io/transaction/${{ fromJSON(github.event.issue.body).txid }}) - [GitBook](https://treasury-guild.gitbook.io/${{ env.GitB }}/)
            ```md
            * ADA - ${{ fromJSON(github.event.issue.body).ada }} 
            * GMBL - ${{ fromJSON(github.event.issue.body).gmbl }}
@@ -80,7 +81,7 @@ jobs:
            ```fix
            ${{ fromJSON(github.event.issue.body).proposal }} | ${{ fromJSON(github.event.issue.body).budget }} | = ${{ fromJSON(github.event.issue.body).name }}
            ```
-           `Payment Amount` - [CardanoScan](https://cardanoscan.io/transaction/${{ fromJSON(github.event.issue.body).txid }}) - [GitBook](https://treasury-guild.gitbook.io/cardano4climate/)
+           `Payment Amount` - [CardanoScan](https://cardanoscan.io/transaction/${{ fromJSON(github.event.issue.body).txid }}) - [GitBook](https://treasury-guild.gitbook.io/${{ env.GitB }}/)
            ```md
            * ADA - ${{ fromJSON(github.event.issue.body).ada }} 
            * GMBL - ${{ fromJSON(github.event.issue.body).gmbl }}
@@ -109,7 +110,7 @@ jobs:
            ```fix
            ${{ fromJSON(github.event.issue.body).proposal }} | ${{ fromJSON(github.event.issue.body).budget }} | = ${{ fromJSON(github.event.issue.body).name }}
            ```
-           `Amount Received` - [CardanoScan](https://cardanoscan.io/transaction/${{ fromJSON(github.event.issue.body).txid }}) - [GitBook](https://treasury-guild.gitbook.io/cardano4climate/)
+           `Amount Received` - [CardanoScan](https://cardanoscan.io/transaction/${{ fromJSON(github.event.issue.body).txid }}) - [GitBook](https://treasury-guild.gitbook.io/${{ env.GitB }}/)
            ```md
            * ADA - ${{ fromJSON(github.event.issue.body).ada }} 
            ```
@@ -136,7 +137,7 @@ jobs:
            ```fix
            ${{ fromJSON(github.event.issue.body).proposal }} | ${{ fromJSON(github.event.issue.body).budget }} | = ${{ fromJSON(github.event.issue.body).name }}
            ```
-           `Payment Amount` - [CardanoScan](https://cardanoscan.io/transaction/${{ fromJSON(github.event.issue.body).txid }}) - [GitBook](https://treasury-guild.gitbook.io/cardano4climate/)
+           `Payment Amount` - [CardanoScan](https://cardanoscan.io/transaction/${{ fromJSON(github.event.issue.body).txid }}) - [GitBook](https://treasury-guild.gitbook.io/${{ env.GitB }}/)
            ```md
            * ADA - ${{ fromJSON(github.event.issue.body).ada }} 
            ```
