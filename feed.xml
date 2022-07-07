@@ -5,7 +5,7 @@
     
     <link>https://cc-treasury.github.io/issueblog/</link>
     <generator>https://github.com/herschel666/microblog-action</generator>
-    <lastBuildDate>Thu, 7 Jul 2022 06:09:13 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 7 Jul 2022 06:17:34 +0000</lastBuildDate>
     
     <item>
       <title>Town Hall Slides -  Wednesday, 27th April, 2022</title>
@@ -108,24 +108,26 @@
     </item>
     
     <item>
-      <title>20000 ADA Incoming</title>
+      <title>50 ADA 50 GMBL 50 AGIX  Incoming</title>
       <link>https://cc-treasury.github.io/issueblog/posts/1137048583.html</link>
       <guid isPermaLink="false">1137048583</guid>
       <pubDate>Mon, 14 Feb 2022 09:54:36 +0000</pubDate>
       <description>
         <![CDATA[<p>{
-"id" : "1657173748334",
-"date": "Thu, 07 Jul 2022 06:02:28 GMT",
-"fund": "Fund7",
-"project": "Cardano4Climate",
-"proposal": "Cardano4Climate-Community-Events",
-"ideascale": "<a href="https://cardano.ideascale.com/c/idea/384076">https://cardano.ideascale.com/c/idea/384076</a>",
+"id" : "1657174607323",
+"date": "Thu, 07 Jul 2022 06:16:47 GMT",
+"fund": "Fund8",
+"project": "Swarm",
+"proposal": "Treasury-Swarm-pool-Rewards",
+"ideascale": "<a href="https://cardano.ideascale.com/c/idea/402129">https://cardano.ideascale.com/c/idea/402129</a>",
 "budget": "Incoming",
 "name": "IOG",
 "exchange-rate": "0.47 USD per ADA",
-"ada" : "20000",
-"wallet-balance": ["1924.00 ADA"],
-"txid": "947f26e9aa405f5fd4c07156669fdabe77ceeb64d782c9bd96d016c2178d6419",
+"ada" : "50",
+"gmbl" : "50",
+"agix" : "50",
+"wallet-balance": ["733.00 ADA", "84465.00 GMBL", "10800.00 AGIX"],
+"txid": "",
 "description": "First Instalment from IOG"
 }</p>
 ]]>
