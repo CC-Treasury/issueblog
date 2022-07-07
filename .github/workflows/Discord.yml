@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
 env: 
   fundR: ${{ fromJSON(github.event.issue.body).fund }} 
-  GitB: "cardano4climate"
+  GitB: "catalyst-swarm"
   gWallet: "Treasury-Swarm-pool-Rewards"
  # schedule:
     # run every 8 hours
