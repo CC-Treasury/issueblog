@@ -81,7 +81,7 @@ jobs:
            ```fix
            ${{ fromJSON(github.event.issue.body).description }}
            ```
-           `Payment Amount` - [CardanoScan](https://cardanoscan.io/transaction/${{ fromJSON(github.event.issue.body).txid }}) - [GitBook](https://treasury-guild.gitbook.io/${{ env.GitB }}/)
+           `Amount Paid` - [CardanoScan](https://cardanoscan.io/transaction/${{ fromJSON(github.event.issue.body).txid }}) - [GitBook](https://treasury-guild.gitbook.io/${{ env.GitB }}/)
            ```md
            * ADA - ${{ fromJSON(github.event.issue.body).ada }} 
            * GMBL - ${{ fromJSON(github.event.issue.body).gmbl }}
@@ -135,7 +135,7 @@ jobs:
            ```fix
            ${{ fromJSON(github.event.issue.body).description }}
            ```
-           `Payment Amount` - [CardanoScan](https://cardanoscan.io/transaction/${{ fromJSON(github.event.issue.body).txid }}) - [GitBook](https://treasury-guild.gitbook.io/${{ env.GitB }}/)
+           `Amount Paid` - [CardanoScan](https://cardanoscan.io/transaction/${{ fromJSON(github.event.issue.body).txid }}) - [GitBook](https://treasury-guild.gitbook.io/${{ env.GitB }}/)
            ```md
            * ADA - ${{ fromJSON(github.event.issue.body).ada }} 
            ```
