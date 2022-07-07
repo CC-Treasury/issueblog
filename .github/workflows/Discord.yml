@@ -78,7 +78,7 @@ jobs:
          description: |
            `Payment Info - ${{ fromJSON(github.event.issue.body).project }} - ${{ fromJSON(github.event.issue.body).fund }}` - [Ideascale](${{ fromJSON(github.event.issue.body).ideascale }})
          details: | 
-           `${{ fromJSON(github.event.issue.body).proposal }} | ${{ fromJSON(github.event.issue.body).budget }} | => ${{ fromJSON(github.event.issue.body).name }}`
+           `${{ fromJSON(github.event.issue.body).proposal }} | ${{ fromJSON(github.event.issue.body).budget }}`
            ```fix
            Description - ${{ fromJSON(github.event.issue.body).description }}
            ```
