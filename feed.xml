@@ -5,7 +5,7 @@
     
     <link>https://cc-treasury.github.io/issueblog/</link>
     <generator>https://github.com/herschel666/microblog-action</generator>
-    <lastBuildDate>Thu, 7 Jul 2022 06:04:09 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 7 Jul 2022 06:04:11 +0000</lastBuildDate>
     
     <item>
       <title>Town Hall Slides -  Wednesday, 27th April, 2022</title>
@@ -103,6 +103,31 @@
       <description>
         <![CDATA[<p>thisid is a test</p>
 <p>testin 2</p>
+]]>
+      </description>
+    </item>
+    
+    <item>
+      <title>20000 ADA Incoming</title>
+      <link>https://cc-treasury.github.io/issueblog/posts/1137048583.html</link>
+      <guid isPermaLink="false">1137048583</guid>
+      <pubDate>Mon, 14 Feb 2022 09:54:36 +0000</pubDate>
+      <description>
+        <![CDATA[<p>{
+"id" : "1657173748334",
+"date": "Thu, 07 Jul 2022 06:02:28 GMT",
+"fund": "Fund7",
+"project": "Cardano4Climate",
+"proposal": "Cardano4Climate-Community-Events",
+"ideascale": "<a href="https://cardano.ideascale.com/c/idea/384076">https://cardano.ideascale.com/c/idea/384076</a>",
+"budget": "Incoming",
+"name": "IOG",
+"exchange-rate": "0.47 USD per ADA",
+"ada" : "20000",
+"wallet-balance": ["1924.00 ADA"],
+"txid": "",
+"description": "First Instalment from IOG"
+}</p>
 ]]>
       </description>
     </item>
