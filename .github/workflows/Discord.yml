@@ -45,7 +45,7 @@ jobs:
          severity: info
          username: Treasury Guild
          color: '#03fc2c'
-         avatarUrl: https://github.com/CC-Treasury/issueblog/raw/main/Untitled-1.png
+         avatarUrl: https://github.com/treasuryguild/Treasury-Guild/raw/main/logo132.png
          description: |
            `${{ fromJSON(github.event.issue.body).project }} | ${{ fromJSON(github.event.issue.body).fund }} |` [Ideascale](${{ fromJSON(github.event.issue.body).ideascale }})
          details: | 
@@ -73,7 +73,7 @@ jobs:
          severity: info
          username: Treasury Guild
          color: '#ff00aa'
-         avatarUrl: https://github.com/CC-Treasury/issueblog/raw/main/Untitled-1.png
+         avatarUrl: https://github.com/treasuryguild/Treasury-Guild/raw/main/logo132.png
          description: |
            `${{ fromJSON(github.event.issue.body).project }} | ${{ fromJSON(github.event.issue.body).fund }} |` [Ideascale](${{ fromJSON(github.event.issue.body).ideascale }})
          details: | 
@@ -101,7 +101,7 @@ jobs:
          severity: info
          username: Treasury Guild
          color: '#03fc2c'
-         avatarUrl: https://github.com/CC-Treasury/issueblog/raw/main/Untitled-1.png
+         avatarUrl: https://github.com/treasuryguild/Treasury-Guild/raw/main/logo132.png
          description: |
            `${{ fromJSON(github.event.issue.body).project }} | ${{ fromJSON(github.event.issue.body).fund }} |` [Ideascale](${{ fromJSON(github.event.issue.body).ideascale }})
          details: | 
@@ -127,7 +127,7 @@ jobs:
          severity: info
          username: Treasury Guild
          color: '#ff00aa'
-         avatarUrl: https://github.com/CC-Treasury/issueblog/raw/main/Untitled-1.png
+         avatarUrl: https://github.com/treasuryguild/Treasury-Guild/raw/main/logo132.png
          description: |
            `${{ fromJSON(github.event.issue.body).project }} | ${{ fromJSON(github.event.issue.body).fund }} |` [Ideascale](${{ fromJSON(github.event.issue.body).ideascale }})
          details: | 
