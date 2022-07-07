@@ -5,7 +5,7 @@
     
     <link>https://cc-treasury.github.io/issueblog/</link>
     <generator>https://github.com/herschel666/microblog-action</generator>
-    <lastBuildDate>Thu, 7 Jul 2022 05:12:56 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 7 Jul 2022 05:13:36 +0000</lastBuildDate>
     
     <item>
       <title>Town Hall Slides -  Wednesday, 27th April, 2022</title>
@@ -128,7 +128,7 @@
 "agix" : "50",
 "wallet-balance": ["683.00 ADA", "84415.00 GMBL", "10750.00 AGIX"],
 "txid": "",
-"description": "Payment for 3x timestamp videos"
+"description": "Payment for 3x timestamp videos on Youtube of Challenge Fest"
 }</p>
 ]]>
       </description>
