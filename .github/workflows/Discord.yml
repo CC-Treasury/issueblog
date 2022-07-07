@@ -78,6 +78,7 @@ jobs:
          description: |
            `Payment Info - ${{ fromJSON(github.event.issue.body).project }} - ${{ fromJSON(github.event.issue.body).fund }}` - [Ideascale](${{ fromJSON(github.event.issue.body).ideascale }})
          details: | 
+           `Description` - `${{ fromJSON(github.event.issue.body).description }}`
            ```fix
            ${{ fromJSON(github.event.issue.body).proposal }} | ${{ fromJSON(github.event.issue.body).budget }} | = ${{ fromJSON(github.event.issue.body).name }}
            ```
@@ -87,8 +88,6 @@ jobs:
            * GMBL - ${{ fromJSON(github.event.issue.body).gmbl }}
            * AGIX - ${{ fromJSON(github.event.issue.body).agix }}
            ```
-           `Description` - `${{ fromJSON(github.event.issue.body).description }}`
-           
            `Wallet Balance of` [${{ fromJSON(github.event.issue.body).proposal }}](https://pool.pm/${{ env.wallet }})
            ```css
            ${{ fromJSON(github.event.issue.body).wallet-balance[0] }} ${{ fromJSON(github.event.issue.body).wallet-balance[1] }} ${{ fromJSON(github.event.issue.body).wallet-balance[2] }}
