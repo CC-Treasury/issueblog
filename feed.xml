@@ -5,7 +5,32 @@
     
     <link>https://cc-treasury.github.io/issueblog/</link>
     <generator>https://github.com/herschel666/microblog-action</generator>
-    <lastBuildDate>Fri, 8 Jul 2022 07:41:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 8 Jul 2022 07:43:20 +0000</lastBuildDate>
+    
+    <item>
+      <title>500 ADA  Outgoing</title>
+      <link>https://cc-treasury.github.io/issueblog/posts/1296891563.html</link>
+      <guid isPermaLink="false">1296891563</guid>
+      <pubDate>Thu, 7 Jul 2022 06:19:58 +0000</pubDate>
+      <description>
+        <![CDATA[<p>{
+"id" : "1657174741784",
+"date": "Thu, 07 Jul 2022 06:19:01 GMT",
+"fund": "Fund8",
+"project": "Swarm",
+"proposal": "Catalyst-Africa-Town-Hall",
+"ideascale": "<a href="https://cardano.ideascale.com/c/idea/401713">https://cardano.ideascale.com/c/idea/401713</a>",
+"budget": "Comm-Org-Tools",
+"name": "Zoom",
+"exchange-rate": "0.55 USD per ADA",
+"ada" : "500",
+"wallet-balance": ["11802.00 ADA"],
+"txid": "",
+"description": "Zoom Subscription"
+}</p>
+]]>
+      </description>
+    </item>
     
     <item>
       <title>Town Hall Slides -  Wednesday, 27th April, 2022</title>
