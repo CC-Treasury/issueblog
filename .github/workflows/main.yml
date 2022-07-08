@@ -2,7 +2,7 @@ name: Build and Deploy Microblog
 
 on:
   issues:
-    types: [opened, edited, reopened, closed, deleted, labeled, unlabeled]
+    types: [labeled]
 
 jobs:
   build:
