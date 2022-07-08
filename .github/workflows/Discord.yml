@@ -32,6 +32,13 @@ jobs:
        if: ${{ env.fundR == 'Fund8' }}
        run: echo "fun=F8" >> "$GITHUB_ENV"
        
+     - name: InColour
+       if: ${{ contains(fromJSON(github.event.issue.body).budget, 'Incoming') }}
+       run: echo "fCol=#03fc2c" >> "$GITHUB_ENV"
+     - name: OutColour
+       if: ${{ !(contains(fromJSON(github.event.issue.body).budget, 'Incoming')) }}
+       run: echo "fCol=#ff00aa" >> "$GITHUB_ENV"
+       
      - name: Set env data
        id: propdata
        run: |
@@ -40,12 +47,12 @@ jobs:
        run: |
          echo "wallet=${{ steps.propdata.outputs.data }}" >> "$GITHUB_ENV"
      - name: Test Custom
-       if: ${{ ( contains(github.event.issue.labels.*.name, 'Incoming') && fromJSON(github.event.issue.body).proposal == env.gWallet) }}
+       if: ${{ (contains(fromJSON(github.event.issue.body).budget, 'Incoming') && fromJSON(github.event.issue.body).proposal == env.gWallet) }}
        uses: rjstone/discord-webhook-notify@v1
        with:
          severity: info
          username: Treasury Guild
-         color: '#03fc2c'
+         color: ${{ env.fCol }}
          avatarUrl: https://github.com/treasuryguild/Treasury-Guild/raw/main/logo132.png
          description: |
            `${{ fromJSON(github.event.issue.body).project }} | ${{ fromJSON(github.event.issue.body).fund }} |` [Ideascale](${{ fromJSON(github.event.issue.body).ideascale }})
@@ -73,7 +80,7 @@ jobs:
        with:
          severity: info
          username: Treasury Guild
-         color: '#ff00aa'
+         color: ${{ env.fCol }}
          avatarUrl: https://github.com/treasuryguild/Treasury-Guild/raw/main/logo132.png
          description: |
            `${{ fromJSON(github.event.issue.body).project }} | ${{ fromJSON(github.event.issue.body).fund }} |` [Ideascale](${{ fromJSON(github.event.issue.body).ideascale }})
@@ -96,12 +103,12 @@ jobs:
          text: ${{ github.event.issue.title }}
          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
      - name: Test Custom3
-       if: ${{ ( contains(github.event.issue.labels.*.name, 'Incoming') && fromJSON(github.event.issue.body).proposal != env.gWallet) }}
+       if: ${{ (contains(fromJSON(github.event.issue.body).budget, 'Incoming') && fromJSON(github.event.issue.body).proposal != env.gWallet) }}
        uses: rjstone/discord-webhook-notify@v1
        with:
          severity: info
          username: Treasury Guild
-         color: '#03fc2c'
+         color: ${{ env.fCol }}
          avatarUrl: https://github.com/treasuryguild/Treasury-Guild/raw/main/logo132.png
          description: |
            `${{ fromJSON(github.event.issue.body).project }} | ${{ fromJSON(github.event.issue.body).fund }} |` [Ideascale](${{ fromJSON(github.event.issue.body).ideascale }})
@@ -122,12 +129,12 @@ jobs:
          text: ${{ github.event.issue.title }}
          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
      - name: Test Custom4
-       if: ${{ ( contains(github.event.issue.labels.*.name, 'Outgoing') && fromJSON(github.event.issue.body).proposal != env.gWallet) }}
+       if: ${{ !(contains(fromJSON(github.event.issue.body).budget, 'Incoming') && fromJSON(github.event.issue.body).proposal != env.gWallet) }}
        uses: rjstone/discord-webhook-notify@v1
        with:
          severity: info
          username: Treasury Guild
-         color: '#ff00aa'
+         color: ${{ env.fCol }}
          avatarUrl: https://github.com/treasuryguild/Treasury-Guild/raw/main/logo132.png
          description: |
            `${{ fromJSON(github.event.issue.body).project }} | ${{ fromJSON(github.event.issue.body).fund }} |` [Ideascale](${{ fromJSON(github.event.issue.body).ideascale }})
