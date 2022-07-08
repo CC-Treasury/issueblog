@@ -5,7 +5,7 @@
     
     <link>https://cc-treasury.github.io/issueblog/</link>
     <generator>https://github.com/herschel666/microblog-action</generator>
-    <lastBuildDate>Fri, 8 Jul 2022 07:43:20 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 8 Jul 2022 07:44:15 +0000</lastBuildDate>
     
     <item>
       <title>500 ADA  Outgoing</title>
@@ -90,7 +90,8 @@
 "budget": "Incoming",
 "name": "Andre",
 "exchange-rate": "0.55 USD per ADA",
-"Wallet balance": ["27300.00 ADA"],
+"ada" : "500",
+"wallet-balance": ["11802.00 ADA"],
 "txid": "fwef4r2433",
 "description": "TEst description"
 }</p>
