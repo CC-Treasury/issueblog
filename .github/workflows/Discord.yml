@@ -6,7 +6,7 @@ on:
 env: 
   fundR: ${{ fromJSON(github.event.issue.body).fund }} 
   GitB: "catalyst-swarm"
-  gWallet: "Gimbal-Wallet"
+  gWallet: "Treasury-Swarm-pool-Rewards"
  # schedule:
     # run every 8 hours
   #  - cron:  '0 0,8,16 * * *'
