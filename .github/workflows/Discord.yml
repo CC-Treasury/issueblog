@@ -80,7 +80,7 @@ jobs:
            `${{ env.fProcess }}` - [CardanoScan](https://cardanoscan.io/transaction/${{ fromJSON(github.event.issue.body).txid }}) - [GitBook](https://treasury-guild.gitbook.io/${{ env.GitB }}/)
            ```md
            ${{ env.adaAm }} 
-           ${{ enc.gmblAm }}
+           ${{ env.gmblAm }}
            ${{ env.agixAm }}
            ```
            `Wallet Balance of` [${{ fromJSON(github.event.issue.body).proposal }}](https://pool.pm/${{ env.wallet }})
