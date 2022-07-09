@@ -1,13 +1,11 @@
 name: Export issues
 on:
   issues:
-    types: [reopened]
+    types: [closed]
   workflow_dispatch:
 env: 
   fundR: ${{ fromJSON(github.event.issue.body).fund }} 
   GitB: "catalyst-swarm"
-  chan1: ${{ secrets.DISCORD_WEBHOOK }}
-  chan2: ${{ secrets.DISCORD_WEBHOOK }}
  # schedule:
     # run every 8 hours
   #  - cron:  '0 0,8,16 * * *'
@@ -35,10 +33,10 @@ jobs:
        
      - name: Chan1
        if: ${{ fromJSON(github.event.issue.body).project == 'Swarm' }}
-       run: echo "chanWeb=env.chan1" >> "$GITHUB_ENV"
+       run: echo "chanWeb=${{ secrets.DISCORD_WEBHOOK }}" >> "$GITHUB_ENV"
      - name: Chan2
        if: ${{ fromJSON(github.event.issue.body).project == 'Lead-Generators' }}
-       run: echo "chanWeb=env.chan2" >> "$GITHUB_ENV"
+       run: echo "chanWeb=${{ secrets.DISCORD_WEBHOOK2 }}" >> "$GITHUB_ENV"
        
      - name: ada
        if: ${{ fromJSON(github.event.issue.body).ada > 0 }}
