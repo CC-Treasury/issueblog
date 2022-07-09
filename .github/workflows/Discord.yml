@@ -32,6 +32,16 @@ jobs:
        if: ${{ env.fundR == 'Fund8' }}
        run: echo "fun=F8" >> "$GITHUB_ENV"
        
+     - name: ada
+       if: ${{ fromJSON(github.event.issue.body).ada > 0 }}
+       run: echo "adaAm=* ADA - ${{ fromJSON(github.event.issue.body).ada }}" >> "$GITHUB_ENV"
+     - name: gmbl
+       if: ${{ fromJSON(github.event.issue.body).gmbl > 0 }}
+       run: echo "gmblAm=* GMBL - ${{ fromJSON(github.event.issue.body).gmbl }}" >> "$GITHUB_ENV"
+     - name: agix
+       if: ${{ fromJSON(github.event.issue.body).agix > 0 }}
+       run: echo "agixAm=* AGIX - ${{ fromJSON(github.event.issue.body).agix }}" >> "$GITHUB_ENV"
+       
      - name: FundsIn
        if: ${{ contains(fromJSON(github.event.issue.body).budget, 'Incoming') }}
        run: |
@@ -69,9 +79,9 @@ jobs:
            ```
            `${{ env.fProcess }}` - [CardanoScan](https://cardanoscan.io/transaction/${{ fromJSON(github.event.issue.body).txid }}) - [GitBook](https://treasury-guild.gitbook.io/${{ env.GitB }}/)
            ```md
-           * ADA - ${{ fromJSON(github.event.issue.body).ada }} 
-           * GMBL - ${{ fromJSON(github.event.issue.body).gmbl }}
-           * AGIX - ${{ fromJSON(github.event.issue.body).agix }}
+           ${{ env.adaAm }} 
+           ${{ enc.gmblAm }}
+           ${{ env.agixAm }}
            ```
            `Wallet Balance of` [${{ fromJSON(github.event.issue.body).proposal }}](https://pool.pm/${{ env.wallet }})
            ```css
