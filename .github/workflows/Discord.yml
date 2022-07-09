@@ -33,7 +33,7 @@ jobs:
        
      - name: ada
        if: ${{ fromJSON(github.event.issue.body).ada > 0 }}
-       run: echo "adaAm=* ADA - ${{ fromJSON(github.event.issue.body).ada }}" >> "$GITHUB_ENV"
+       run: echo "adaAm=* ADA  - ${{ fromJSON(github.event.issue.body).ada }}" >> "$GITHUB_ENV"
      - name: gmbl
        if: ${{ fromJSON(github.event.issue.body).gmbl > 0 }}
        run: echo "gmblAm=* GMBL - ${{ fromJSON(github.event.issue.body).gmbl }}" >> "$GITHUB_ENV"
