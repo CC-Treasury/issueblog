@@ -40,6 +40,7 @@ jobs:
        run: |
          echo "chanWeb=${{ secrets.DISCORD_WEBHOOK2 }}" >> "$GITHUB_ENV"
          echo "GitB=treasury-guild-wallet" >> "$GITHUB_ENV"
+         
      - name: ada
        if: ${{ fromJSON(github.event.issue.body).ada > 0 }}
        run: echo "adaAm=* ADA  - ${{ fromJSON(github.event.issue.body).ada }}" >> "$GITHUB_ENV"
