@@ -5,7 +5,6 @@ on:
   workflow_dispatch:
 env: 
   fundR: ${{ fromJSON(github.event.issue.body).fund }} 
-  GitB: "catalyst-swarm"
  # schedule:
     # run every 8 hours
   #  - cron:  '0 0,8,16 * * *'
@@ -33,11 +32,14 @@ jobs:
        
      - name: Chan1
        if: ${{ fromJSON(github.event.issue.body).project == 'Swarm' }}
-       run: echo "chanWeb=${{ secrets.DISCORD_WEBHOOK }}" >> "$GITHUB_ENV"
+       run: |
+         echo "chanWeb=${{ secrets.DISCORD_WEBHOOK }}" >> "$GITHUB_ENV"
+         echo "GitB=catalyst-swarm" >> "$GITHUB_ENV"
      - name: Chan2
        if: ${{ fromJSON(github.event.issue.body).project == 'Lead-Generators' }}
-       run: echo "chanWeb=${{ secrets.DISCORD_WEBHOOK2 }}" >> "$GITHUB_ENV"
-       
+       run: |
+         echo "chanWeb=${{ secrets.DISCORD_WEBHOOK2 }}" >> "$GITHUB_ENV"
+         echo "GitB=treasury-guild-wallet" >> "$GITHUB_ENV"
      - name: ada
        if: ${{ fromJSON(github.event.issue.body).ada > 0 }}
        run: echo "adaAm=* ADA  - ${{ fromJSON(github.event.issue.body).ada }}" >> "$GITHUB_ENV"
