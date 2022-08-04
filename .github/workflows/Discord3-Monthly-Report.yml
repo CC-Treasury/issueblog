@@ -40,16 +40,6 @@ jobs:
        run: |
          echo "chanWeb=${{ secrets.DISCORD_WEBHOOK2 }}" >> "$GITHUB_ENV"
          echo "GitB=treasury-guild-wallet" >> "$GITHUB_ENV"
-         
-     - name: ada
-       if: ${{ fromJSON(github.event.issue.body).ada > 0 }}
-       run: echo "adaAm=* ${{ fromJSON(github.event.issue.body).ada }} ADA ${{ env.fSwap }}" >> "$GITHUB_ENV"
-     - name: gmbl
-       if: ${{ fromJSON(github.event.issue.body).gmbl > 0 }}
-       run: echo "gmblAm=* ${{ fromJSON(github.event.issue.body).gmbl }} GMBL ${{ env.fSwap }}" >> "$GITHUB_ENV"
-     - name: agix
-       if: ${{ fromJSON(github.event.issue.body).agix > 0 }}
-       run: echo "agixAm=* ${{ fromJSON(github.event.issue.body).agix }} AGIX ${{ env.fSwap }}" >> "$GITHUB_ENV"
        
      - name: FundsIn
        if: ${{ contains(fromJSON(github.event.issue.body).budget, 'Incoming') }}
@@ -71,6 +61,16 @@ jobs:
          echo "fCol=#ff00aa" >> "$GITHUB_ENV"
          echo "fProcess=Amount Paid" >> "$GITHUB_ENV"
          echo "fTitle=Outgoing" >> "$GITHUB_ENV"
+         
+     - name: ada
+       if: ${{ fromJSON(github.event.issue.body).ada > 0 }}
+       run: echo "adaAm=* ${{ fromJSON(github.event.issue.body).ada }} ADA ${{ env.fSwap }}" >> "$GITHUB_ENV"
+     - name: gmbl
+       if: ${{ fromJSON(github.event.issue.body).gmbl > 0 }}
+       run: echo "gmblAm=* ${{ fromJSON(github.event.issue.body).gmbl }} GMBL ${{ env.fSwap }}" >> "$GITHUB_ENV"
+     - name: agix
+       if: ${{ fromJSON(github.event.issue.body).agix > 0 }}
+       run: echo "agixAm=* ${{ fromJSON(github.event.issue.body).agix }} AGIX ${{ env.fSwap }}" >> "$GITHUB_ENV"
          
        
      - name: Set env data
