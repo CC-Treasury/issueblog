@@ -43,13 +43,13 @@ jobs:
          
      - name: ada
        if: ${{ fromJSON(github.event.issue.body).ada > 0 }}
-       run: echo "adaAm=* ADA  - ${{ fromJSON(github.event.issue.body).ada }}" >> "$GITHUB_ENV"
+       run: echo "adaAm=* ${{ fromJSON(github.event.issue.body).ada }} ADA" >> "$GITHUB_ENV"
      - name: gmbl
        if: ${{ fromJSON(github.event.issue.body).gmbl > 0 }}
-       run: echo "gmblAm=* GMBL - ${{ fromJSON(github.event.issue.body).gmbl }}" >> "$GITHUB_ENV"
+       run: echo "gmblAm=* ${{ fromJSON(github.event.issue.body).gmbl }} GMBL" >> "$GITHUB_ENV"
      - name: agix
        if: ${{ fromJSON(github.event.issue.body).agix > 0 }}
-       run: echo "agixAm=* AGIX - ${{ fromJSON(github.event.issue.body).agix }}" >> "$GITHUB_ENV"
+       run: echo "agixAm=* ${{ fromJSON(github.event.issue.body).agix }} AGIX" >> "$GITHUB_ENV"
        
      - name: FundsIn
        if: ${{ contains(fromJSON(github.event.issue.body).budget, 'Incoming') }}
@@ -57,12 +57,21 @@ jobs:
          echo "fCol=#03fc2c" >> "$GITHUB_ENV"
          echo "fProcess=Amount Received" >> "$GITHUB_ENV"
          echo "fTitle=Incoming" >> "$GITHUB_ENV"
+         echo "fSwap= *" >> "$GITHUB_ENV"
+     - name: Swapped
+       if: ${{ contains(fromJSON(github.event.issue.body).budget, 'Swap') }}
+       run: |
+         echo "fCol=#0341fc" >> "$GITHUB_ENV"
+         echo "fProcess=Swapped" >> "$GITHUB_ENV"
+         echo "fTitle=Swapped" >> "$GITHUB_ENV"
+         echo "fSwap=for ${{ fromJSON(github.event.issue.body).swap }} *" >> "$GITHUB_ENV"
      - name: FundsOut
-       if: ${{ !(contains(fromJSON(github.event.issue.body).budget, 'Incoming')) }}
+       if: ${{ !(contains(fromJSON(github.event.issue.body).budget, 'Incoming', 'Swap')) }}
        run: |
          echo "fCol=#ff00aa" >> "$GITHUB_ENV"
          echo "fProcess=Amount Paid" >> "$GITHUB_ENV"
          echo "fTitle=Outgoing" >> "$GITHUB_ENV"
+         echo "fSwap= *" >> "$GITHUB_ENV"
        
      - name: Set env data
        id: propdata
@@ -87,9 +96,9 @@ jobs:
            ```
            `${{ env.fProcess }}` - [CardanoScan](https://cardanoscan.io/transaction/${{ fromJSON(github.event.issue.body).txid }}) - [GitBook](https://treasury-guild.gitbook.io/${{ env.GitB }}/)
            ```md
-           ${{ env.adaAm }} 
-           ${{ env.gmblAm }}
-           ${{ env.agixAm }}
+           ${{ env.adaAm }} ${{ env.fSwap }}
+           ${{ env.gmblAm }} ${{ env.fSwap }}
+           ${{ env.agixAm }} ${{ env.fSwap }}
            ```
            `Wallet Balance of` [${{ fromJSON(github.event.issue.body).proposal }}](https://pool.pm/${{ env.wallet }})
            ```css
