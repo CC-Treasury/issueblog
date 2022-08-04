@@ -66,7 +66,7 @@ jobs:
          echo "fTitle=Swapped" >> "$GITHUB_ENV"
          echo "fSwap=for ${{ fromJSON(github.event.issue.body).swap }} *" >> "$GITHUB_ENV"
      - name: FundsOut
-       if: ${{ !(contains(fromJSON(github.event.issue.body).budget, 'Incoming')) }} && ${{ !(contains(fromJSON(github.event.issue.body).budget, 'Swap')) }}
+       if: ${{ !(contains(fromJSON(github.event.issue.body).budget, 'Incoming'))  &&  !(contains(fromJSON(github.event.issue.body).budget, 'Swap')) }}
        run: |
          echo "fCol=#ff00aa" >> "$GITHUB_ENV"
          echo "fProcess=Amount Paid" >> "$GITHUB_ENV"
