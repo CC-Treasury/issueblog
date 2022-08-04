@@ -51,7 +51,7 @@ jobs:
      - name: Swapped
        if: ${{ contains(fromJSON(github.event.issue.body).budget, 'Swap') }}
        run: |
-         echo "fCol=#036ffc" >> "$GITHUB_ENV"
+         echo "fCol=#0352fc" >> "$GITHUB_ENV"
          echo "fProcess=Swapped" >> "$GITHUB_ENV"
          echo "fTitle=Swapped" >> "$GITHUB_ENV"
          echo "fSwap=for ${{ fromJSON(github.event.issue.body).swap }}" >> "$GITHUB_ENV"
