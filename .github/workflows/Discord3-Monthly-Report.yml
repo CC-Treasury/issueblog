@@ -51,7 +51,7 @@ jobs:
      - name: Swapped
        if: ${{ contains(fromJSON(github.event.issue.body).budget, 'Swap') }}
        run: |
-         echo "fCol=#0341fc" >> "$GITHUB_ENV"
+         echo "fCol=#036ffc" >> "$GITHUB_ENV"
          echo "fProcess=Swapped" >> "$GITHUB_ENV"
          echo "fTitle=Swapped" >> "$GITHUB_ENV"
          echo "fSwap=for ${{ fromJSON(github.event.issue.body).swap }}" >> "$GITHUB_ENV"
@@ -96,9 +96,9 @@ jobs:
            ```
            `${{ env.fProcess }}` - [CardanoScan](https://cardanoscan.io/transaction/${{ fromJSON(github.event.issue.body).txid }}) - [GitBook](https://treasury-guild.gitbook.io/${{ env.GitB }}/)
            ```md
-           ${{ env.adaAm }} 
-           ${{ env.gmblAm }} 
-           ${{ env.agixAm }} 
+           ${{ env.adaAm }}
+           ${{ env.gmblAm }}
+           ${{ env.agixAm }}
            ```
            `Wallet Balance of` [${{ fromJSON(github.event.issue.body).proposal }}](https://pool.pm/${{ env.wallet }})
            ```css
