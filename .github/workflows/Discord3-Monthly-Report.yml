@@ -54,7 +54,7 @@ jobs:
          echo "fCol=#0352fc" >> "$GITHUB_ENV"
          echo "fProcess=Swapped" >> "$GITHUB_ENV"
          echo "fTitle=Swapped" >> "$GITHUB_ENV"
-         echo "fSwap=for ${{ fromJSON(github.event.issue.body).swap }}" >> "$GITHUB_ENV"
+   
      - name: FundsOut
        if: ${{ !(contains(fromJSON(github.event.issue.body).budget, 'Incoming'))  &&  !(contains(fromJSON(github.event.issue.body).budget, 'Swap')) }}
        run: |
@@ -64,13 +64,13 @@ jobs:
          
      - name: ada
        if: ${{ fromJSON(github.event.issue.body).ada > 0 }}
-       run: echo "adaAm=* ${{ fromJSON(github.event.issue.body).ada }} ADA ${{ env.fSwap }}" >> "$GITHUB_ENV"
+       run: echo "adaAm=* ${{ fromJSON(github.event.issue.body).ada }} ADA" >> "$GITHUB_ENV"
      - name: gmbl
        if: ${{ fromJSON(github.event.issue.body).gmbl > 0 }}
-       run: echo "gmblAm=* ${{ fromJSON(github.event.issue.body).gmbl }} GMBL ${{ env.fSwap }}" >> "$GITHUB_ENV"
+       run: echo "gmblAm=* ${{ fromJSON(github.event.issue.body).gmbl }} GMBL" >> "$GITHUB_ENV"
      - name: agix
        if: ${{ fromJSON(github.event.issue.body).agix > 0 }}
-       run: echo "agixAm=* ${{ fromJSON(github.event.issue.body).agix }} AGIX ${{ env.fSwap }}" >> "$GITHUB_ENV"
+       run: echo "agixAm=* ${{ fromJSON(github.event.issue.body).agix }} AGIX" >> "$GITHUB_ENV"
          
        
      - name: Set env data
