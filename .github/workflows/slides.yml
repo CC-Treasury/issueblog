@@ -20,7 +20,7 @@ jobs:
     - name: Set env data
       id: propdata
       run: |
-        echo "::set-output name=data::$(curl -s https://api.github.com/repos/CC-Treasury/issueblog/issues/${{ env.iNum }} | jq '.body' | sed 's/\"//g')"
+        echo "::set-output name=data::$(curl -s https://api.github.com/repos/CC-Treasury/issueblog/issues/${{ github.event.issue.number }} | jq '.body' | sed 's/\"//g')"
     - name: Set env body
       run: |
         echo "iBody=${{ steps.propdata.outputs.data }}" >> "$GITHUB_ENV"
