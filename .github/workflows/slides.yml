@@ -31,11 +31,11 @@ jobs:
         token: ${{ secrets.PAT }} # Built in GITHUB_TOKEN permissions are too restrictive, so a personal access token is used here
         assignees: ${{ steps.extract.outputs.assignees }}
         labels: ${{ steps.extract.outputs.labels }}
-        title: Town Hall Slides - ${{ env.TODAY }}
+        title: Treasury Advisory Service Meeting - ${{ env.TODAY }}
         body: |
           ### Townhall slides - ${{ env.TODAY }}
           
-          * Previous Town Hall - https://github.com//Ek-phrasis/Sandbox/issues/{{ previousIssueNumber }}
+          * Previous Town Hall - https://github.com//CC-Treasury/issueblog/issues/{{ previousIssueNumber }}
           * CC Admin meeting - 
           
           - [ ] Prepare Town Hall slides for Wednesday
