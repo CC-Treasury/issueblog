@@ -44,11 +44,10 @@ jobs:
         labels: ${{ steps.extract.outputs.labels }}
         title: Treasury Advisory Service Meeting - ${{ env.TODAY }}
         body: |
-          ```md
           ${{ env.iBody }}
           ${{ env.iNum }}
           {{ previousIssueNumber }}
-          ```
+          
         project: 1  # The project-number from organization project https://github.com/orgs/org/projects/project-number
         column: In progress
         pinned: false
