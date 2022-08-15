@@ -5,7 +5,50 @@
     
     <link>https://cc-treasury.github.io/issueblog/</link>
     <generator>https://github.com/herschel666/microblog-action</generator>
-    <lastBuildDate>Wed, 3 Aug 2022 13:43:03 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 15 Aug 2022 11:27:27 +0000</lastBuildDate>
+    
+    <item>
+      <title>Town Hall Slides -  Monday, 22th August, 2022</title>
+      <link>https://cc-treasury.github.io/issueblog/posts/1338863618.html</link>
+      <guid isPermaLink="false">1338863618</guid>
+      <pubDate>Mon, 15 Aug 2022 11:27:09 +0000</pubDate>
+      <description>
+        <![CDATA[<h3>Townhall slides -  Monday, 22th August, 2022</h3>
+<ul>
+<li>Previous Town Hall - <a href="https://github.com//Ek-phrasis/Sandbox/issues/22">https://github.com//Ek-phrasis/Sandbox/issues/22</a></li>
+<li>CC Admin meeting -</li>
+</ul>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" disabled> Prepare Town Hall slides for Wednesday</li>
+</ul>
+]]>
+      </description>
+    </item>
+    
+    <item>
+      <title>50 ADA Incoming</title>
+      <link>https://cc-treasury.github.io/issueblog/posts/1328423314.html</link>
+      <guid isPermaLink="false">1328423314</guid>
+      <pubDate>Thu, 4 Aug 2022 10:36:11 +0000</pubDate>
+      <description>
+        <![CDATA[<p>{
+"id" : "1657272212158",
+"date": "Fri, 08 Jul 2022 09:23:32 GMT",
+"fund": "Fund8",
+"project": "Swarm",
+"proposal": "Treasury-Swarm-pool-Rewards",
+"ideascale": "<a href="https://cardano.ideascale.com/c/idea/402129">https://cardano.ideascale.com/c/idea/402129</a>",
+"budget": "Incoming",
+"name": "IOG",
+"exchange-rate": "0.48 USD per ADA",
+"ada" : "50",
+"wallet-balance": ["683.00 ADA", "84415.00 GMBL", "10750.00 AGIX"],
+"txid": "",
+"description": "First Instalment"
+}</p>
+]]>
+      </description>
+    </item>
     
     <item>
       <title>50 ADA 50 GMBL 50 AGIX  Outgoing</title>
@@ -35,24 +78,6 @@
     </item>
     
     <item>
-      <title>Town Hall Slides -  Wednesday, 27th April, 2022</title>
-      <link>https://cc-treasury.github.io/issueblog/posts/1209094217.html</link>
-      <guid isPermaLink="false">1209094217</guid>
-      <pubDate>Wed, 20 Apr 2022 02:48:14 +0000</pubDate>
-      <description>
-        <![CDATA[<h3>Townhall slides -  Wednesday, 27th April, 2022</h3>
-<ul>
-<li>Previous Town Hall - <a href="https://github.com//Ek-phrasis/Sandbox/issues/21">https://github.com//Ek-phrasis/Sandbox/issues/21</a></li>
-<li>CC Admin meeting -</li>
-</ul>
-<ul class="contains-task-list">
-<li class="task-list-item"><input type="checkbox" disabled> Prepare Town Hall slides for Wednesday</li>
-</ul>
-]]>
-      </description>
-    </item>
-    
-    <item>
       <title>2422</title>
       <link>https://cc-treasury.github.io/issueblog/posts/1187491345.html</link>
       <guid isPermaLink="false">1187491345</guid>
@@ -77,7 +102,7 @@
     </item>
     
     <item>
-      <title>Swapped 500 ADA  out for 5000 AGIX In</title>
+      <title>500 ADA Outgoing</title>
       <link>https://cc-treasury.github.io/issueblog/posts/1186550802.html</link>
       <guid isPermaLink="false">1186550802</guid>
       <pubDate>Wed, 30 Mar 2022 14:29:22 +0000</pubDate>
@@ -93,10 +118,9 @@
 "name": "MinSwap",
 "exchange-rate": "0.53 USD per ADA",
 "ada" : "500",
-"swap" : "5000 AGIX",
 "wallet-balance": ["2183.00 ADA", "62815.00 GMBL", "10350.00 AGIX"],
 "txid": "232323d32f23rwefsefr42",
-"description": "Swapped 500 ADA  out for 5000 AGIX In"
+"description": " Test Swapped 500 ADA out for 5000 AGIX In"
 }</p>
 ]]>
       </description>
