@@ -1,8 +1,9 @@
 name: Build and Deploy Microblog
 
 on:
-  issues:
-    types: [labeled]
+  workflow_dispatch:
+#  issues:
+#    types: [labeled]
 
 jobs:
   build:
