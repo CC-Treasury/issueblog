@@ -13,6 +13,14 @@ jobs:
     name: New responder duty
     runs-on: ubuntu-latest
     steps:
+    
+    - name: Set env data
+      id: propdata
+      run: |
+        echo "::set-output name=data::$(curl -s https://api.github.com/repos/CC-Treasury/issueblog/issues/{{ previousIssueNumber }} | jq '.body' | sed 's/\"//g')"
+    - name: Set env body
+      run: |
+        echo "iBody=${{ steps.propdata.outputs.data }}" >> "$GITHUB_ENV"
 
     - name: Get template
       uses: imjohnbo/extract-issue-template-fields@v1
@@ -32,13 +40,7 @@ jobs:
         assignees: ${{ steps.extract.outputs.assignees }}
         labels: ${{ steps.extract.outputs.labels }}
         title: Treasury Advisory Service Meeting - ${{ env.TODAY }}
-        body: |
-          ### Townhall slides - ${{ env.TODAY }}
-          
-          * Previous Town Hall - https://github.com//CC-Treasury/issueblog/issues/{{ previousIssueNumber }}
-          * CC Admin meeting - 
-          
-          - [ ] Prepare Town Hall slides for Wednesday
+        body: ${{ env.iBody }}
         project: 1  # The project-number from organization project https://github.com/orgs/org/projects/project-number
         column: In progress
         pinned: false
