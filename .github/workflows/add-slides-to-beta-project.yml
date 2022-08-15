@@ -14,4 +14,4 @@ jobs:
         with:
           project-url: https://github.com/users/CC-Treasury/projects/1
           github-token: ${{ secrets.PAT }}
-          labeled: slides
+          labeled: Meeting, ADA Due, F8 Automate Educate Communicate
