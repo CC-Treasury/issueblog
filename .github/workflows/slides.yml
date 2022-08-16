@@ -32,14 +32,23 @@ jobs:
         path: .github/ISSUE_TEMPLATE/first_responder.md # assignees, labels, and title defined in issue template header
       env: 
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        
     - name: create string
       run: |
-        MY_STRING="${{ env.iBody }}"
-        MY_STRING="${MY_STRING//'%'/'%25'}"
-        MY_STRING="${MY_STRING//$'\n'/'%0A'}"
-        MY_STRING="${MY_STRING//$'\r'/'%0D'}"
-        echo "::set-output name=content::$MY_STRING"
+        MY_STRING=$(cat << EOF
+        first line
+        second line
+        third line
+        EOF
+        )
+        echo "MY_STRING<<EOF" >> $GITHUB_ENV
+        echo "$MY_STRING" >> $GITHUB_ENV
+        echo "EOF" >> $GITHUB_ENV
         id: my_string
+    - name: display string
+      run: |
+        echo "The string is: ${{ env.MY_STRING }}"
+
 
     # Generates and pins new first responder issue, closes previous, writes linking comments, assigns to next person in line, adds to organization project number 550, column name "Duties", milestone number 10
     - name: Todays date
@@ -51,7 +60,7 @@ jobs:
         assignees: ${{ steps.extract.outputs.assignees }}
         labels: ${{ steps.extract.outputs.labels }}
         title: Treasury Advisory Service Meeting - ${{ env.TODAY }}
-        body: ${{ steps.my_string.outputs.content }} https://github.com//CC-Treasury/issueblog/issues/${{ env.iNum }}
+        body: ${{ env.MY_STRING }} https://github.com//CC-Treasury/issueblog/issues/${{ env.iNum }}
           
         project: 1  # The project-number from organization project https://github.com/orgs/org/projects/project-number
         column: In progress
