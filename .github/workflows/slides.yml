@@ -43,7 +43,7 @@ jobs:
         assignees: ${{ steps.extract.outputs.assignees }}
         labels: ${{ steps.extract.outputs.labels }}
         title: Treasury Advisory Service Meeting - ${{ env.TODAY }}
-        body: ${{ env.iBody }} https://github.com//CC-Treasury/issueblog/issues/${{ toJSON(env.iNum) }}
+        body: ${{ fromJSON(env.iBody) }} https://github.com//CC-Treasury/issueblog/issues/${{ fromJSON(env.iNum) }}
           
         project: 1  # The project-number from organization project https://github.com/orgs/org/projects/project-number
         column: In progress
