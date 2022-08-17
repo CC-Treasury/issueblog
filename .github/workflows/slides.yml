@@ -36,7 +36,7 @@ jobs:
     - name: Prepare issue Message
       id: issue-message-creator
       run: |
-        ISSUE_MESSAGE=${{ steps.propdata.outputs.data }}
+        ISSUE_MESSAGE="${{ steps.propdata.outputs.data }}"
         ISSUE_MESSAGE=${ISSUE_MESSAGE//'%'/'%25'}
         ISSUE_MESSAGE=${ISSUE_MESSAGE//$'\n'/'%0A'}
         ISSUE_MESSAGE=${ISSUE_MESSAGE//$'\r'/'%0D'}
