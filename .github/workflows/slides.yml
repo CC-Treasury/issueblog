@@ -37,8 +37,10 @@ jobs:
       id: issue-message-creator
       run: |
         ISSUE_BODY=$(echo "${{ steps.propdata.outputs.data }}")
-        ISSUE_MESSAGE=${ISSUE_BODY//$'\n'/'%0A'}
-        echo "::set-output name=issue-message::$ISSUE_MESSAGE"
+        ISSUE_BODY="${ISSUE_BODY//'%'/'%25'}"
+        ISSUE_BODY="${ISSUE_BODY//$'\n'/'%0A'}"
+        ISSUE_BODY="${ISSUE_BODY//$'\r'/'%0D'}"
+        echo "::set-output name=issue-message::$ISSUE_BODY"
 
     # Generates and pins new first responder issue, closes previous, writes linking comments, assigns to next person in line, adds to organization project number 550, column name "Duties", milestone number 10
     - name: Todays date
