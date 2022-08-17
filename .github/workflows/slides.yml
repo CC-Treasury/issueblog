@@ -36,12 +36,7 @@ jobs:
     - name: Prepare issue Message
       id: issue-message-creator
       run: |
-        ISSUE_BODY="Test
-        
-        ${{ env.iBody }}
-        
-        
-        Test"
+        ISSUE_BODY="${{ env.iBody }}"
         ISSUE_BODY="${ISSUE_BODY//'%'/'%25'}"
         ISSUE_BODY="${ISSUE_BODY//$'\n'/'%0A'}"
         ISSUE_BODY="${ISSUE_BODY//$'\r'/'%0D'}"
@@ -56,8 +51,8 @@ jobs:
         token: ${{ secrets.PAT }} # Built in GITHUB_TOKEN permissions are too restrictive, so a personal access token is used here
         assignees: ${{ steps.extract.outputs.assignees }}
         labels: ${{ steps.extract.outputs.labels }}
-        title: Treasury Advisory Service Meeting - ${{ env.TODAY }}
-        body: "${{ steps.issue-message-creator.outputs.issue-message }} https://github.com//CC-Treasury/issueblog/issues/${{ env.iNum }}"
+        title: Treasury Advisory Service Meeting - ${{ env.TODAY }} https://github.com//CC-Treasury/issueblog/issues/${{ env.iNum }}
+        body: "${{ steps.issue-message-creator.outputs.issue-message }}"
           
         project: 1  # The project-number from organization project https://github.com/orgs/org/projects/project-number
         column: In progress
