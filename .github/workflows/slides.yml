@@ -20,7 +20,7 @@ jobs:
     - name: Set env data
       id: propdata
       run: |
-        echo -e "::set-output name=data::$(curl -s https://api.github.com/repos/CC-Treasury/issueblog/issues/28 | jq '.body' | sed 's/\"//g')"
+        echo "::set-output name=data::$(curl -s https://api.github.com/repos/CC-Treasury/issueblog/issues/28 | jq '.body' | sed 's/\"//g')"
     - name: Set env body
       run: |
         echo "iBody=${{ steps.propdata.outputs.data }}" >> "$GITHUB_ENV"
@@ -41,7 +41,7 @@ jobs:
         $iBody
         
         Test"
-        echo "::set-output name=issue-message::${ISSUE_MESSAGE//$'\n'/'%0A'}"
+        echo "::set-output name=issue-message::${$iBody//$'\n'/'%0A'}"
 
     # Generates and pins new first responder issue, closes previous, writes linking comments, assigns to next person in line, adds to organization project number 550, column name "Duties", milestone number 10
     - name: Todays date
