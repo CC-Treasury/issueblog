@@ -36,7 +36,12 @@ jobs:
     - name: Prepare issue Message
       id: issue-message-creator
       run: |
-        ISSUE_BODY=$(echo "${{ steps.propdata.outputs.data }}")
+        ISSUE_BODY="Test
+        
+        ${{ env.iBody }}
+        
+        
+        Test"
         ISSUE_BODY="${ISSUE_BODY//'%'/'%25'}"
         ISSUE_BODY="${ISSUE_BODY//$'\n'/'%0A'}"
         ISSUE_BODY="${ISSUE_BODY//$'\r'/'%0D'}"
