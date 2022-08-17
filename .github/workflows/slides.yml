@@ -36,12 +36,11 @@ jobs:
     - name: Prepare issue Message
       id: issue-message-creator
       run: |
-        MY_STRING=$(cat<<'EOF'
-        ${{ env.iBody }}
-        EOF)
-        echo "MY_STRING<<EOF" >> $GITHUB_ENV
-        echo "$MY_STRING" >> $GITHUB_ENV
-        echo "EOF" >> $GITHUB_ENV
+        text="${{ toJSON(env.iBody) }}"
+        text="${text//$'%'/%25}"
+        text="${text//$'\n'/%0A}"
+        text="${text//$'\r'/%0D}"
+        echo "::set-output name=value::$text"
 
     # Generates and pins new first responder issue, closes previous, writes linking comments, assigns to next person in line, adds to organization project number 550, column name "Duties", milestone number 10
     - name: Todays date
@@ -53,7 +52,7 @@ jobs:
         assignees: ${{ steps.extract.outputs.assignees }}
         labels: ${{ steps.extract.outputs.labels }}
         title: Treasury Advisory Service Meeting - ${{ env.TODAY }}
-        body: "${{ env.MY_STRING }} https://github.com//CC-Treasury/issueblog/issues/${{ env.iNum }}"
+        body: "${{ steps.issue-message-creator.outputs.value }} https://github.com//CC-Treasury/issueblog/issues/${{ env.iNum }}"
           
         project: 1  # The project-number from organization project https://github.com/orgs/org/projects/project-number
         column: In progress
