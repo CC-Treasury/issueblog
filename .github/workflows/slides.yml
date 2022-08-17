@@ -36,7 +36,8 @@ jobs:
     - name: Prepare issue Message
       id: issue-message-creator
       run: |
-        ISSUE_MESSAGE=${{ env.iBody }}
+        ISSUE_MESSAGE="
+        ${{ env.iBody }}"
         echo "::set-output name=issue-message::${ISSUE_MESSAGE//$'\n'/'%0A'}"
 
     # Generates and pins new first responder issue, closes previous, writes linking comments, assigns to next person in line, adds to organization project number 550, column name "Duties", milestone number 10
