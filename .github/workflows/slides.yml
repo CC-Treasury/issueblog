@@ -46,10 +46,6 @@ jobs:
         MY_STRING="${MY_STRING//$'\r'/'%0D'}"
         echo "::set-output name=content::$MY_STRING"
       id: my_string
-    - name: display string
-      run: |
-        echo "The string is: ${{ steps.my_string.outputs.content }}"
-
 
     # Generates and pins new first responder issue, closes previous, writes linking comments, assigns to next person in line, adds to organization project number 550, column name "Duties", milestone number 10
     - name: Todays date
@@ -61,7 +57,7 @@ jobs:
         assignees: ${{ steps.extract.outputs.assignees }}
         labels: ${{ steps.extract.outputs.labels }}
         title: Treasury Advisory Service Meeting - ${{ env.TODAY }}
-        body: ${{ env.MY_STRING }} https://github.com//CC-Treasury/issueblog/issues/${{ env.iNum }}
+        body: ${{ steps.my_string.outputs.content }} https://github.com//CC-Treasury/issueblog/issues/${{ env.iNum }}
           
         project: 1  # The project-number from organization project https://github.com/orgs/org/projects/project-number
         column: In progress
