@@ -33,18 +33,12 @@ jobs:
       env: 
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
-    - uses: actions/github-script@v5.0.0
-      id: pre-process
-      env:
-        TEST: ${{ env.iBody }}
-      with:
-        script: |
-          const { TEST } = process.env
-          return TEST.replace(/%/g, '%25')
-            .replace(/\r/g, '%0D')
-            .replace(/\n/g, '%0A')
-        result-encoding: string
-  #  - run: echo "${{steps.pre-process.outputs.result}}"
+    - name: Prepare issue Message
+      id: issue-message-creator
+      run: |
+        ISSUE_MESSAGE="${{ env.iBody }}"
+
+        echo "::set-output name=issue-message::${ISSUE_MESSAGE//$'\n'/'%0A'}"
 
     # Generates and pins new first responder issue, closes previous, writes linking comments, assigns to next person in line, adds to organization project number 550, column name "Duties", milestone number 10
     - name: Todays date
@@ -56,7 +50,7 @@ jobs:
         assignees: ${{ steps.extract.outputs.assignees }}
         labels: ${{ steps.extract.outputs.labels }}
         title: Treasury Advisory Service Meeting - ${{ env.TODAY }}
-        body: ${{steps.pre-process.outputs.result}} https://github.com//CC-Treasury/issueblog/issues/${{ env.iNum }}
+        body: ${{ steps.issue-message-creator.outputs.issue-message }} https://github.com//CC-Treasury/issueblog/issues/${{ env.iNum }}
           
         project: 1  # The project-number from organization project https://github.com/orgs/org/projects/project-number
         column: In progress
