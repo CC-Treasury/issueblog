@@ -37,7 +37,7 @@ jobs:
       id: issue-message-creator
       run: |
         MY_STRING=$(cat<<'EOF'
-        ${{ toJSON(env.iBody) }}
+        ${{ env.iBody }}
         EOF)
         echo "MY_STRING<<EOF" >> $GITHUB_ENV
         echo "$MY_STRING" >> $GITHUB_ENV
