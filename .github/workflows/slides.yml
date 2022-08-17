@@ -36,7 +36,7 @@ jobs:
     - name: Prepare issue Message
       id: issue-message-creator
       run: |
-        text="${{ toJSON(env.iBody) }}"
+        text="${{ env.iBody }}"
         text="${text//$'%'/%25}"
         text="${text//$'\n'/%0A}"
         text="${text//$'\r'/%0D}"
