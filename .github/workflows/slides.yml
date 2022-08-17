@@ -38,7 +38,7 @@ jobs:
       run: |
         ISSUE_MESSAGE="Test
         
-        ${$iBody//$'\n'/'%0A'}
+        $iBody
         
         Test"
         echo "::set-output name=issue-message::${ISSUE_MESSAGE//$'\n'/'%0A'}"
