@@ -21,9 +21,15 @@ jobs:
       id: propdata
       run: |
         echo "::set-output name=data::$(curl -s https://api.github.com/repos/treasuryguild/Treasury-Advisory-Service/issues/53 | jq '.body' | sed 's/\"//g')"
+    
     - name: Set env body
       run: |
         echo "iBody=${{ steps.propdata.outputs.data }}" >> "$GITHUB_ENV"
+        
+    - name: Print github context
+      env:
+        GITHUB_CONTEXT: ${{ toJSON(env.iBody) }}
+      run: echo "$GITHUB_CONTEXT"
 
     - name: Get template
       uses: imjohnbo/extract-issue-template-fields@v1
@@ -36,7 +42,7 @@ jobs:
     - name: Prepare issue Message
       id: issue-message-creator
       run: |
-        text="${{ env.iBody }}"
+        text="$GITHUB_CONTEXT"
         text="${text//$'%'/%25}"
         text="${text//$'\n'/%0A}"
         text="${text//$'\r'/%0D}"
