@@ -41,7 +41,10 @@ jobs:
         $iBody
         
         Test"
-        echo "::set-output name=issue-message::${ISSUE_MESSAGE//$'\n'/%0A}"
+        ISSUE_MESSAGE="${ISSUE_MESSAGE//'%'/'%25'}"
+        ISSUE_MESSAGE="${ISSUE_MESSAGE//$'\n'/'%0A'}"
+        ISSUE_MESSAGE="${ISSUE_MESSAGE//$'\r'/'%0D'}"
+        echo "::set-output name=issue-message::$ISSUE_MESSAGE"
 
     # Generates and pins new first responder issue, closes previous, writes linking comments, assigns to next person in line, adds to organization project number 550, column name "Duties", milestone number 10
     - name: Todays date
