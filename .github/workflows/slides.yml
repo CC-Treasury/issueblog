@@ -34,11 +34,6 @@ jobs:
     - name: Set env body
       run: |
         echo "iBody=${{ steps.propdata.outputs.data }}" >> "$GITHUB_ENV"
-        
-    - name: Print github context
-      env:
-        GITHUB_CONTEXT: ${{ toJSON(env.iBody) }}
-      run: echo "$GITHUB_CONTEXT"
 
     - name: Get template
       uses: imjohnbo/extract-issue-template-fields@v1
@@ -67,7 +62,9 @@ jobs:
         assignees: ${{ steps.extract.outputs.assignees }}
         labels: ${{ steps.extract.outputs.labels }}
         title: Treasury Advisory Service Meeting - ${{ env.TODAY }}
-        body: "${{ steps.issue-message-creator.outputs.value }} ${{ steps.bugs.outputs.path }} https://github.com//CC-Treasury/issueblog/issues/${{ env.iNum }}"
+        body: |
+          "${{ steps.issue-message-creator.outputs.value }} 
+          [Link to previous agenda](https://github.com//CC-Treasury/issueblog/issues/${{ env.iNum }})"
           
         project: 1  # The project-number from organization project https://github.com/orgs/org/projects/project-number
         column: In progress
