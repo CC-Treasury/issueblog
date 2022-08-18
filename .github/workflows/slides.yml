@@ -4,10 +4,14 @@
 name: First Responder
 on:
   workflow_dispatch:
-  #schedule:
-  # First of every month – https://crontab.guru
-  #- cron: 0 0 1 * *
-
+  schedule:
+  # 22h00 UTC Wed and Sat – https://crontab.guru
+  - cron: 0 22 * * 3,6
+env: 
+  Org: "CC-Treasury" 
+  Repo: "issueblog"
+  Labels: "Meeting"
+  
 jobs:
   first_responder:
     name: New responder duty
@@ -21,12 +25,12 @@ jobs:
         state: open
         # Find the last updated open issue that has these labels:
         labels: |
-          Meeting
+          ${{ env.Labels }}
           
     - name: Set env data
       id: propdata
       run: |
-        echo "::set-output name=data::$(curl -s https://api.github.com/repos/CC-Treasury/issueblog/issues/${{ steps.last-issue.outputs.issue-number }} | jq '.body' | sed 's/\"//g')"
+        echo "::set-output name=data::$(curl -s https://api.github.com/repos/${{ env.Org }}/${{ env.Repo }}/issues/${{ steps.last-issue.outputs.issue-number }} | jq '.body' | sed 's/\"//g')"
     
     - name: Set env body
       run: |
@@ -51,7 +55,7 @@ jobs:
 
     # Generates and pins new first responder issue, closes previous, writes linking comments, assigns to next person in line, adds to organization project number 550, column name "Duties", milestone number 10
     - name: Todays date
-      run: echo "TODAY=$(date -d '7 days' '+ %A, %dth %B, %Y')" >> $GITHUB_ENV
+      run: echo "TODAY=$(date -d '3 days' '+ %A, %dth %B, %Y')" >> $GITHUB_ENV
     - name: New first responder issue
       uses: imjohnbo/issue-bot@v3
       with:
