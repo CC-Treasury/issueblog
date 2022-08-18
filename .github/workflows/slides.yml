@@ -20,7 +20,7 @@ jobs:
     - name: Set env data
       id: propdata
       run: |
-        echo "::set-output name=data::$(curl -s https://api.github.com/repos/treasuryguild/Treasury-Advisory-Service/issues/79 | jq '.body' | sed 's/\"//g')"
+        echo "::set-output name=data::$(curl -s https://api.github.com/repos/treasuryguild/Treasury-Advisory-Service/issues/58 | jq '.body' | sed 's/\"//g')"
     
     - name: Set env body
       run: |
