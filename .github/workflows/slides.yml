@@ -22,10 +22,7 @@ jobs:
         # Find the last updated open issue that has these labels:
         labels: |
           Meeting
-    
-    - name: Set env number
-      run: |
-        echo "iNum={{ previousIssueNumber }}" >> "$GITHUB_ENV"
+          
     - name: Set env data
       id: propdata
       run: |
