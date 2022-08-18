@@ -43,9 +43,9 @@ jobs:
       id: issue-message-creator
       run: |
         text="${{ env.iBody }}"
-        text="${text//$'%'/%25}"
-        text="${text//$'\n'/%0A}"
-        text="${text//$'\r'/%0D}"
+        text="${text//'%'/%25}"
+        text="${text//'\n'/%0A}"
+        text="${text//'\r'/%0D}"
         echo "::set-output name=value::$text"
 
     # Generates and pins new first responder issue, closes previous, writes linking comments, assigns to next person in line, adds to organization project number 550, column name "Duties", milestone number 10
