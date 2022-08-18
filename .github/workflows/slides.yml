@@ -21,7 +21,7 @@ jobs:
         query: 'label:meeting is:open'
         token: ${{ github.token }}
     - name: Close found issues
-      run: ${{ steps.bugs.outputs.path }}
+      run: cat ${{ steps.bugs.outputs.path }}
     
     - name: Set env number
       run: |
