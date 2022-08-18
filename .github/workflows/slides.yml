@@ -14,13 +14,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     
+    - name: Find all bugs
+      id: bugs
+      uses: lee-dohm/select-matching-issues@v1
+      with:
+        query: 'label:meeting is:open'
+        token: ${{ github.token }}
+    - name: Close found issues
+      run: ${{ steps.bugs.outputs.path }}
+    
     - name: Set env number
       run: |
         echo "iNum={{ previousIssueNumber }}" >> "$GITHUB_ENV"
     - name: Set env data
       id: propdata
       run: |
-        echo "::set-output name=data::$(curl -s https://api.github.com/repos/treasuryguild/Treasury-Advisory-Service/issues/53 | jq '.body' | sed 's/\"//g')"
+        echo "::set-output name=data::$(curl -s ${{ steps.bugs.outputs.path }} | jq '.body' | sed 's/\"//g')"
     
     - name: Set env body
       run: |
