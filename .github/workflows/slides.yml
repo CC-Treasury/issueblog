@@ -63,8 +63,8 @@ jobs:
         labels: ${{ steps.extract.outputs.labels }}
         title: Treasury Advisory Service Meeting - ${{ env.TODAY }}
         body: |
-          "${{ steps.issue-message-creator.outputs.value }} 
-          [Link to previous agenda](https://github.com//CC-Treasury/issueblog/issues/${{ env.iNum }})"
+          ${{ steps.issue-message-creator.outputs.value }} 
+          [Link to previous agenda](https://github.com//CC-Treasury/issueblog/issues/${{ env.iNum }})
           
         project: 1  # The project-number from organization project https://github.com/orgs/org/projects/project-number
         column: In progress
