@@ -1,8 +1,9 @@
 name: Meetings Issue
 
 on:
-  schedule:
-    - cron: "0 0 1 * *"
+  workflow_dispatch:
+ # schedule:
+  #  - cron: "0 0 1 * *"
 
 jobs:
   create-issue:
