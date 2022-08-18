@@ -9,10 +9,11 @@ on:
   #- cron: 0 0 1 * *
 
 jobs:
-  find_issue:
-    name: Issue finder
+  first_responder:
+    name: New responder duty
     runs-on: ubuntu-latest
     steps:
+    
     - name: Find the last open report issue
       id: last-issue
       uses: micalevisk/last-issue-action@v2
@@ -21,12 +22,6 @@ jobs:
         # Find the last updated open issue that has these labels:
         labels: |
           Meeting
-          
-  first_responder:
-    needs: find_issue
-    name: New responder duty
-    runs-on: ubuntu-latest
-    steps:
     
     - name: Set env number
       run: |
