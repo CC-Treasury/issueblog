@@ -16,7 +16,7 @@ jobs:
     
     - name: Set env number
       run: |
-        echo "iNum={{ previousIssueNumber }}" >> "$GITHUB_ENV"
+        echo "iNum=toJSON({{ previousIssueNumber }})" >> "$GITHUB_ENV"
     - name: Set env data
       id: propdata
       run: |
