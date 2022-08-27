@@ -4,9 +4,9 @@
 name: First Responder
 on:
   workflow_dispatch:
-  schedule:
+  #schedule:
   # 22h00 UTC Wed and Sat – https://crontab.guru
-  - cron: 0 22 * * 3,6
+  #- cron: 0 22 * * 3,6
 env: 
   Org: "CC-Treasury" 
   Repo: "issueblog"
