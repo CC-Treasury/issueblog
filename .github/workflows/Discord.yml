@@ -40,6 +40,9 @@ jobs:
      - name: agix
        if: ${{ fromJSON(github.event.issue.body).agix > 0 }}
        run: echo "agixAm=* AGIX - ${{ fromJSON(github.event.issue.body).agix }}" >> "$GITHUB_ENV"
+     - name: hosk
+       if: ${{ fromJSON(github.event.issue.body).hosk > 0 }}
+       run: echo "hoskAm=* HOSK - ${{ fromJSON(github.event.issue.body).hosk }}" >> "$GITHUB_ENV"
        
      - name: FundsIn
        if: ${{ contains(fromJSON(github.event.issue.body).budget, 'Incoming') }}
@@ -80,6 +83,7 @@ jobs:
            ${{ env.adaAm }} 
            ${{ env.gmblAm }}
            ${{ env.agixAm }}
+           ${{ env.hoskAm }}
            ```
            `Wallet Balance of` [${{ fromJSON(github.event.issue.body).proposal }}](https://pool.pm/${{ env.wallet }})
            ```css
