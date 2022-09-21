@@ -2,7 +2,7 @@ name: issue-automation
 
 on:
   issues:
-    types: [opened]
+    types: [created]
 
 jobs:
   automate-issues-labels:
