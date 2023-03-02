@@ -35,7 +35,7 @@ jobs:
      - name: Set propdash data
        run: |
          MY_STRING=${{ env.dash }}
-         MY_STRING=$(echo $MY_STRING | sed 's/-/ /g')
+         MY_STRING=$(echo $MY_STRING | sed 's/-/%20/g')
          echo $MY_STRING
          echo "propdash=$MY_STRING" >> $GITHUB_ENV
        
