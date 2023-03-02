@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
 env: 
   fundR: ${{ fromJSON(github.event.issue.body).fund }} 
-  propdash: ${{ fromJSON(github.event.issue.body).proposal }} 
+  propdash: ${{ fromJSON(github.event.issue.body).proposal | replace('-', ' ') }} 
   GitB: "catalyst-swarm"
  # schedule:
     # run every 8 hours
@@ -31,9 +31,6 @@ jobs:
      - name: Fund 8
        if: ${{ env.fundR == 'Fund8' }}
        run: echo "fun=F8" >> "$GITHUB_ENV"
-       
-     - name: changeDash
-       run: echo "dash=${{ env.propdash | sed 's/-/ /g' }}" >> "$GITHUB_ENV"
        
      - name: ada
        if: ${{ fromJSON(github.event.issue.body).ada > 0 }}
@@ -82,7 +79,7 @@ jobs:
            ```fix
            ${{ fromJSON(github.event.issue.body).description }}
            ```
-           `${{ env.fProcess }}` - [CardanoScan](https://cardanoscan.io/transaction/${{ fromJSON(github.event.issue.body).txid }}) - [Dashboard](https://treasuryguild.netlify.app/Swarm/${{ env.dash }}/)
+           `${{ env.fProcess }}` - [CardanoScan](https://cardanoscan.io/transaction/${{ fromJSON(github.event.issue.body).txid }}) - [Dashboard](https://treasuryguild.netlify.app/Swarm/${{ env.propdash }}/)
            ```md
            ${{ env.adaAm }} 
            ${{ env.gmblAm }}
