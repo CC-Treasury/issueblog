@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
 env: 
   fundR: ${{ fromJSON(github.event.issue.body).fund }} 
-  dash: ${{ fromJSON(github.event.issue.body).proposal | replace('-', ' ') }} 
+  dash: ${{ fromJSON(github.event.issue.body).proposal }} 
   GitB: "catalyst-swarm"
  # schedule:
     # run every 8 hours
