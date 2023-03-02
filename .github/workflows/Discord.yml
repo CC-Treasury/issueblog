@@ -33,7 +33,7 @@ jobs:
        run: echo "fun=F8" >> "$GITHUB_ENV"
        
      - name: changeDash
-       run: echo "dash=env.propdash | sed 's/-/ /g'" >> "$GITHUB_ENV"
+       run: echo "dash=${{ env.propdash | sed 's/-/ /g' }}" >> "$GITHUB_ENV"
        
      - name: ada
        if: ${{ fromJSON(github.event.issue.body).ada > 0 }}
