@@ -34,7 +34,10 @@ jobs:
        
      - name: Replace dashes with spaces
        run: |
-        env.propdash=$(echo "${env.dash}" | sed 's/-/ /g')
+        env.propdash="this-is-a-string-with-dashes"
+        env.propspaces=$(echo "${env.propdash}" | sed 's/-/ /g')
+        echo "String with dashes: ${env.propdash}"
+        echo "String with spaces: ${env.propspaces}"
        
      - name: ada
        if: ${{ fromJSON(github.event.issue.body).ada > 0 }}
