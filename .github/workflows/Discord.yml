@@ -33,9 +33,8 @@ jobs:
        run: echo "fun=F8" >> "$GITHUB_ENV"
        
      - name: Replace dashes with spaces
-       run: |
-        echo "env.propspaces=$(echo "${env.dash}" | sed 's/-/ /g')" >> $GITHUB_ENV
-        echo "env.propdash=${env.propspaces}" >> $GITHUB_ENV
+       run: echo "propdash=$(echo "${env.dash}" | sed 's/-/ /g')" >> "$GITHUB_ENV"
+
        
      - name: ada
        if: ${{ fromJSON(github.event.issue.body).ada > 0 }}
