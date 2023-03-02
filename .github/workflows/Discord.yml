@@ -37,7 +37,7 @@ jobs:
          MY_STRING=${{ env.dash }}
          MY_STRING=$(echo $MY_STRING | sed 's/-/ /g')
          echo $MY_STRING
-         echo "env.propdash=$MY_STRING" >> $GITHUB_ENV
+         echo "propdash=$MY_STRING" >> $GITHUB_ENV
        
      - name: ada
        if: ${{ fromJSON(github.event.issue.body).ada > 0 }}
