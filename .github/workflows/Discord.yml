@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
 env: 
   fundR: ${{ fromJSON(github.event.issue.body).fund }} 
-  propdash: ${{ fromJSON(github.event.issue.body).proposal | replace('-', ' ') }} 
+  dash: ${{ fromJSON(github.event.issue.body).proposal | replace('-', ' ') }} 
   GitB: "catalyst-swarm"
  # schedule:
     # run every 8 hours
@@ -31,6 +31,10 @@ jobs:
      - name: Fund 8
        if: ${{ env.fundR == 'Fund8' }}
        run: echo "fun=F8" >> "$GITHUB_ENV"
+       
+     - name: Replace dashes with spaces
+       run: |
+        env.propdash=$(echo "${env.dash}" | sed 's/-/ /g')
        
      - name: ada
        if: ${{ fromJSON(github.event.issue.body).ada > 0 }}
