@@ -32,9 +32,14 @@ jobs:
        if: ${{ env.fundR == 'Fund8' }}
        run: echo "fun=F8" >> "$GITHUB_ENV"
        
-     - name: Replace dashes with spaces
-       run: echo "propdash=$(echo "${env.dash}" | sed 's/-/ /g')" >> "$GITHUB_ENV"
-
+     - name: Set env data
+       id: propdash2
+       run: |
+         echo "::set-output name=data::$(echo "${env.dash}" | sed 's/-/ /g')"
+    
+     - name: Set env body
+       run: |
+         echo "propdash=${{ steps.propdash2.outputs.data }}" >> "$GITHUB_ENV"
        
      - name: ada
        if: ${{ fromJSON(github.event.issue.body).ada > 0 }}
