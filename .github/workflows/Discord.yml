@@ -41,16 +41,22 @@ jobs:
        
      - name: ada
        if: ${{ fromJSON(github.event.issue.body).ada > 0 }}
-       run: echo "adaAm=* ADA  - ${{ fromJSON(github.event.issue.body).ada }}" >> "$GITHUB_ENV"
+       run: echo "adaAm=* ${{ fromJSON(github.event.issue.body).ada }} ADA" >> "$GITHUB_ENV"
      - name: gmbl
        if: ${{ fromJSON(github.event.issue.body).gmbl > 0 }}
-       run: echo "gmblAm=* GMBL - ${{ fromJSON(github.event.issue.body).gmbl }}" >> "$GITHUB_ENV"
+       run: echo "gmblAm=* ${{ fromJSON(github.event.issue.body).gmbl }} GMBL" >> "$GITHUB_ENV"
      - name: agix
        if: ${{ fromJSON(github.event.issue.body).agix > 0 }}
-       run: echo "agixAm=* AGIX - ${{ fromJSON(github.event.issue.body).agix }}" >> "$GITHUB_ENV"
-     - name: hosk
-       if: ${{ fromJSON(github.event.issue.body).hosk > 0 }}
-       run: echo "hoskAm=* HOSK - ${{ fromJSON(github.event.issue.body).hosk }}" >> "$GITHUB_ENV"
+       run: echo "agixAm=* ${{ fromJSON(github.event.issue.body).agix }} AGIX" >> "$GITHUB_ENV" 
+     - name: copi
+       if: ${{ fromJSON(github.event.issue.body).copi > 0 }}
+       run: echo "copiAm=* ${{ fromJSON(github.event.issue.body).copi }} COPI" >> "$GITHUB_ENV"    
+     - name: ntx
+       if: ${{ fromJSON(github.event.issue.body).ntx > 0 }}
+       run: echo "ntxAm=* ${{ fromJSON(github.event.issue.body).ntx }} NTX" >> "$GITHUB_ENV" 
+     - name: djed
+       if: ${{ fromJSON(github.event.issue.body).djed > 0 }}
+       run: echo "djedAm=* ${{ fromJSON(github.event.issue.body).djed }} DJED" >> "$GITHUB_ENV"
        
      - name: FundsIn
        if: ${{ contains(fromJSON(github.event.issue.body).budget, 'Incoming') }}
@@ -86,12 +92,14 @@ jobs:
            ```fix
            ${{ fromJSON(github.event.issue.body).description }}
            ```
-           `${{ env.fProcess }}` - [CardanoScan](https://cardanoscan.io/transaction/${{ fromJSON(github.event.issue.body).txid }}) - [Dashboard](https://treasuryguild.netlify.app/Swarm/${{ env.propdash }}/)
+           `${{ env.fProcess }}` - [CardanoScan](https://cardanoscan.io/transaction/${{ fromJSON(github.event.issue.body).txid }}) - [Dashboard](https://treasuryguild.netlify.app/Swarm/${{ env.propdash }}/) - [TxView](https://treasuryguild.netlify.app/transactions/${{ fromJSON(github.event.issue.body).txid }})
            ```md
-           ${{ env.adaAm }} 
+           ${{ env.adaAm }}
            ${{ env.gmblAm }}
            ${{ env.agixAm }}
-           ${{ env.hoskAm }}
+           ${{ env.djedAm }}
+           ${{ env.copiAm }}
+           ${{ env.ntxAm }}
            ```
            `Wallet Balance of` [${{ fromJSON(github.event.issue.body).proposal }}](https://pool.pm/${{ env.wallet }})
            ```css
