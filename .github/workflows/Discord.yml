@@ -31,6 +31,12 @@ jobs:
      - name: Fund 8
        if: ${{ env.fundR == 'Fund8' }}
        run: echo "fun=F8" >> "$GITHUB_ENV"
+     - name: Fund 9
+       if: ${{ env.fundR == 'Fund9' }}
+       run: echo "fun=F9" >> "$GITHUB_ENV"
+     - name: Treasury Wallet
+       if: ${{ env.fundR == 'TreasuryWallet' }}
+       run: echo "fun=TW" >> "$GITHUB_ENV"
        
      - name: Set propdash data
        run: |
@@ -45,6 +51,27 @@ jobs:
          echo $MY_STRING
          echo "propdash2=$MY_STRING" >> $GITHUB_ENV
        
+     - name: FundsIn
+       if: ${{ contains(fromJSON(github.event.issue.body).budget, 'Incoming') }}
+       run: |
+         echo "fCol=#03fc2c" >> "$GITHUB_ENV"
+         echo "fProcess=Amount Received" >> "$GITHUB_ENV"
+         echo "fTitle=Incoming" >> "$GITHUB_ENV"
+       
+     - name: Swapped
+       if: ${{ contains(fromJSON(github.event.issue.body).budget, 'Swap') }}
+       run: |
+         echo "fCol=#0352fc" >> "$GITHUB_ENV"
+         echo "fProcess=Swapped" >> "$GITHUB_ENV"
+         echo "fTitle=Swapped" >> "$GITHUB_ENV"
+         
+     - name: FundsOut
+       if: ${{ !(contains(fromJSON(github.event.issue.body).budget, 'Incoming'))  &&  !(contains(fromJSON(github.event.issue.body).budget, 'Swap')) }}
+       run: |
+         echo "fCol=#476d65" >> "$GITHUB_ENV"
+         echo "fProcess=Amount Paid" >> "$GITHUB_ENV"
+         echo "fTitle=Outgoing" >> "$GITHUB_ENV"
+         
      - name: ada
        if: ${{ fromJSON(github.event.issue.body).ada > 0 }}
        run: echo "adaAm=* ${{ fromJSON(github.event.issue.body).ada }} ADA" >> "$GITHUB_ENV"
@@ -62,25 +89,12 @@ jobs:
        run: echo "ntxAm=* ${{ fromJSON(github.event.issue.body).ntx }} NTX" >> "$GITHUB_ENV" 
      - name: djed
        if: ${{ fromJSON(github.event.issue.body).djed > 0 }}
-       run: echo "djedAm=* ${{ fromJSON(github.event.issue.body).djed }} DJED" >> "$GITHUB_ENV"
-       
-     - name: FundsIn
-       if: ${{ contains(fromJSON(github.event.issue.body).budget, 'Incoming') }}
-       run: |
-         echo "fCol=#03fc2c" >> "$GITHUB_ENV"
-         echo "fProcess=Amount Received" >> "$GITHUB_ENV"
-         echo "fTitle=Incoming" >> "$GITHUB_ENV"
-     - name: FundsOut
-       if: ${{ !(contains(fromJSON(github.event.issue.body).budget, 'Incoming')) }}
-       run: |
-         echo "fCol=#ff00aa" >> "$GITHUB_ENV"
-         echo "fProcess=Amount Paid" >> "$GITHUB_ENV"
-         echo "fTitle=Outgoing" >> "$GITHUB_ENV"
+       run: echo "djedAm=* ${{ fromJSON(github.event.issue.body).djed }} DJED" >> "$GITHUB_ENV"    
        
      - name: Set env data
        id: propdata
        run: |
-         echo "::set-output name=data::$(curl -s https://raw.githubusercontent.com/treasuryguild/treasury-v3/main/proposals/${{ env.fun }}-${{ fromJSON(github.event.issue.body).proposal }}.json | jq '.wallet' | sed 's/\"//g')"
+         echo "::set-output name=data::$(curl -s https://raw.githubusercontent.com/treasuryguild/treasury-system-v4/main/proposals/${{ env.fun }}-${{ fromJSON(github.event.issue.body).proposal }}.json | jq '.wallet' | sed 's/\"//g')"
      - name: Set env wallet
        run: |
          echo "wallet=${{ steps.propdata.outputs.data }}" >> "$GITHUB_ENV"
@@ -92,9 +106,9 @@ jobs:
          color: ${{ env.fCol }}
          avatarUrl: https://github.com/treasuryguild/Treasury-Guild/raw/main/logo132.png
          description: |
-           `${{ fromJSON(github.event.issue.body).proposal }}`
+           `${{ fromJSON(github.event.issue.body).project }}`
          details: | 
-           `${{ fromJSON(github.event.issue.body).budget }}`
+           `${{ fromJSON(github.event.issue.body).proposal }} | ${{ fromJSON(github.event.issue.body).budget }}`
            ```fix
            ${{ fromJSON(github.event.issue.body).description }}
            ```
@@ -111,7 +125,6 @@ jobs:
            ```css
            ${{ fromJSON(github.event.issue.body).walletBalance[0] }} ${{ fromJSON(github.event.issue.body).walletBalance[1] }} ${{ fromJSON(github.event.issue.body).walletBalance[2] }} ${{ fromJSON(github.event.issue.body).walletBalance[3] }} ${{ fromJSON(github.event.issue.body).walletBalance[4] }}
            ```    
-         footer: Exchange Rate - ${{ fromJSON(github.event.issue.body).exchange-rate }}
+         footer: Exchange Rate - ${{ fromJSON(github.event.issue.body).exchangeRate }}
          text: ${{ env.fTitle }}
          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
- 
