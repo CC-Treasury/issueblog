@@ -6,7 +6,6 @@ on:
 env: 
   fundR: ${{ fromJSON(github.event.issue.body).fund }} 
   dash: ${{ fromJSON(github.event.issue.body).proposal }} 
-  GitB: "catalyst-swarm"
  # schedule:
     # run every 8 hours
   #  - cron:  '0 0,8,16 * * *'
