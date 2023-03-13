@@ -6,6 +6,7 @@ on:
 env: 
   fundR: ${{ fromJSON(github.event.issue.body).fund }} 
   dash: ${{ fromJSON(github.event.issue.body).proposal }} 
+  dash2: ${{ fromJSON(github.event.issue.body).project }} 
  # schedule:
     # run every 8 hours
   #  - cron:  '0 0,8,16 * * *'
@@ -37,6 +38,12 @@ jobs:
          MY_STRING=$(echo $MY_STRING | sed 's/-/%20/g')
          echo $MY_STRING
          echo "propdash=$MY_STRING" >> $GITHUB_ENV
+     - name: Set propdash2 data
+       run: |
+         MY_STRING=${{ env.dash2 }}
+         MY_STRING=$(echo $MY_STRING | sed 's/-/%20/g')
+         echo $MY_STRING
+         echo "propdash2=$MY_STRING" >> $GITHUB_ENV
        
      - name: ada
        if: ${{ fromJSON(github.event.issue.body).ada > 0 }}
@@ -91,7 +98,7 @@ jobs:
            ```fix
            ${{ fromJSON(github.event.issue.body).description }}
            ```
-           `${{ env.fProcess }}` - [CardanoScan](https://cardanoscan.io/transaction/${{ fromJSON(github.event.issue.body).txid }}) - [Dashboard](https://treasuryguild.com/Singularity%20Net/${{ env.propdash }}/) - [TxView](https://treasuryguild.com/transactions/${{ fromJSON(github.event.issue.body).txid }})
+           `${{ env.fProcess }}` - [CardanoScan](https://cardanoscan.io/transaction/${{ fromJSON(github.event.issue.body).txid }}) - [Dashboard](https://treasuryguild.com/${{ env.propdash2 }}/${{ env.propdash }}/) - [TxView](https://treasuryguild.com/transactions/${{ fromJSON(github.event.issue.body).txid }})
            ```md
            ${{ env.adaAm }}
            ${{ env.gmblAm }}
