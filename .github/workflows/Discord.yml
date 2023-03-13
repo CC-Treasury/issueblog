@@ -91,7 +91,7 @@ jobs:
            ```fix
            ${{ fromJSON(github.event.issue.body).description }}
            ```
-           `${{ env.fProcess }}` - [CardanoScan](https://cardanoscan.io/transaction/${{ fromJSON(github.event.issue.body).txid }}) - [Dashboard](https://treasuryguild.netlify.app/Swarm/${{ env.propdash }}/) - [TxView](https://treasuryguild.netlify.app/transactions/${{ fromJSON(github.event.issue.body).txid }})
+           `${{ env.fProcess }}` - [CardanoScan](https://cardanoscan.io/transaction/${{ fromJSON(github.event.issue.body).txid }}) - [Dashboard](https://treasuryguild.com/Swarm/${{ env.propdash }}/) - [TxView](https://treasuryguild.com/transactions/${{ fromJSON(github.event.issue.body).txid }})
            ```md
            ${{ env.adaAm }}
            ${{ env.gmblAm }}
