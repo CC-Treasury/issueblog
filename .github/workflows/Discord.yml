@@ -102,7 +102,7 @@ jobs:
            ```
            `Wallet Balance of` [${{ fromJSON(github.event.issue.body).proposal }}](https://pool.pm/${{ env.wallet }})
            ```css
-           ${{ fromJSON(github.event.issue.body).walletBalance[0] }} ${{ fromJSON(github.event.issue.body).walletBalance[1] }} ${{ fromJSON(github.event.issue.body).walletBalance[2] }}
+           ${{ fromJSON(github.event.issue.body).walletBalance[0] }} ${{ fromJSON(github.event.issue.body).walletBalance[1] }} ${{ fromJSON(github.event.issue.body).walletBalance[2] }} ${{ fromJSON(github.event.issue.body).walletBalance[3] }} ${{ fromJSON(github.event.issue.body).walletBalance[4] }}
            ```    
          footer: Exchange Rate - ${{ fromJSON(github.event.issue.body).exchange-rate }}
          text: ${{ env.fTitle }}
