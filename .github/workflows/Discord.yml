@@ -85,9 +85,9 @@ jobs:
          color: ${{ env.fCol }}
          avatarUrl: https://github.com/treasuryguild/Treasury-Guild/raw/main/logo132.png
          description: |
-           `${{ fromJSON(github.event.issue.body).project }} | ${{ fromJSON(github.event.issue.body).fund }} |`
+           `${{ fromJSON(github.event.issue.body).proposal }}`
          details: | 
-           `${{ fromJSON(github.event.issue.body).proposal }} | ${{ fromJSON(github.event.issue.body).budget }}`
+           `${{ fromJSON(github.event.issue.body).budget }}`
            ```fix
            ${{ fromJSON(github.event.issue.body).description }}
            ```
